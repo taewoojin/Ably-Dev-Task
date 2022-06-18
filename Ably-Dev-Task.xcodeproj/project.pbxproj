@@ -21,6 +21,12 @@
 		F4C25C34285DC58800570A5C /* GoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C33285DC58800570A5C /* GoodsCell.swift */; };
 		F4C25C37285DC62900570A5C /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C36285DC62900570A5C /* NSObject+Extensions.swift */; };
 		F4C25C39285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C38285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift */; };
+		F4C25C3E285DF1B700570A5C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C3D285DF1B700570A5C /* HomeRouter.swift */; };
+		F4C25C40285DF2C200570A5C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C3F285DF2C200570A5C /* Constant.swift */; };
+		F4C25C42285DF4DD00570A5C /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C41285DF4DD00570A5C /* HomeRepository.swift */; };
+		F4C25C44285DF59E00570A5C /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C43285DF59E00570A5C /* HomeData.swift */; };
+		F4C25C46285DF7D400570A5C /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C45285DF7D400570A5C /* HomeService.swift */; };
+		F4C25C48285DF89E00570A5C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C47285DF89E00570A5C /* HomeViewModel.swift */; };
 		F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */; };
 		F4FA8E09285D9CC10044ADB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */; };
 		F4FA8E0C285D9CC10044ADB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E0A285D9CC10044ADB2 /* LaunchScreen.storyboard */; };
@@ -68,6 +74,12 @@
 		F4C25C33285DC58800570A5C /* GoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCell.swift; sourceTree = "<group>"; };
 		F4C25C36285DC62900570A5C /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		F4C25C38285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCollectionFlowLayout.swift; sourceTree = "<group>"; };
+		F4C25C3D285DF1B700570A5C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		F4C25C3F285DF2C200570A5C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F4C25C41285DF4DD00570A5C /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		F4C25C43285DF59E00570A5C /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
+		F4C25C45285DF7D400570A5C /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		F4C25C47285DF89E00570A5C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F4FA8DFC285D9CBE0044ADB2 /* Ably-Dev-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ably-Dev-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,10 +161,15 @@
 		F4C25BEE285DB21E00570A5C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */,
+				F4C25C3F285DF2C200570A5C /* Constant.swift */,
+				F4C25BDC285DAB3800570A5C /* Coordinator */,
 				F4C25C35285DC61E00570A5C /* Extensions */,
 				F4C25C2E285DC05700570A5C /* Model */,
 				F4C25BE3285DAEAE00570A5C /* Present */,
-				F4C25BDC285DAB3800570A5C /* Coordinator */,
+				F4C25C3C285DF16500570A5C /* Repository */,
+				F4C25C3A285DF15700570A5C /* Router */,
+				F4C25C3B285DF15E00570A5C /* Service */,
 				F4FA8E7D285DA5C20044ADB2 /* ViewModel */,
 			);
 			path = Source;
@@ -174,6 +191,7 @@
 			children = (
 				F4C25C2F285DC05F00570A5C /* Goods.swift */,
 				F4C25C31285DC1A200570A5C /* Banner.swift */,
+				F4C25C43285DF59E00570A5C /* HomeData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +202,30 @@
 				F4C25C36285DC62900570A5C /* NSObject+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F4C25C3A285DF15700570A5C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F4C25C3D285DF1B700570A5C /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F4C25C3B285DF15E00570A5C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F4C25C45285DF7D400570A5C /* HomeService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F4C25C3C285DF16500570A5C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F4C25C41285DF4DD00570A5C /* HomeRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		F4FA8DF3285D9CBE0044ADB2 = {
@@ -210,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				F4C25BEE285DB21E00570A5C /* Source */,
-				F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */,
 				F4C25C2B285DB8B600570A5C /* Resource */,
 			);
 			path = "Ably-Dev-Task";
@@ -236,6 +277,7 @@
 		F4FA8E7D285DA5C20044ADB2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F4C25C47285DF89E00570A5C /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -391,14 +433,20 @@
 				F4C25BDB285DAB0800570A5C /* BaseViewController.swift in Sources */,
 				F4C25BEA285DB08300570A5C /* WishListViewController.swift in Sources */,
 				F4C25C34285DC58800570A5C /* GoodsCell.swift in Sources */,
+				F4C25C48285DF89E00570A5C /* HomeViewModel.swift in Sources */,
+				F4C25C40285DF2C200570A5C /* Constant.swift in Sources */,
 				F4C25BEC285DB0B800570A5C /* WishListCoordinator.swift in Sources */,
+				F4C25C3E285DF1B700570A5C /* HomeRouter.swift in Sources */,
 				F4C25BDE285DAB4200570A5C /* Coordinator.swift in Sources */,
+				F4C25C46285DF7D400570A5C /* HomeService.swift in Sources */,
 				F4C25C32285DC1A200570A5C /* Banner.swift in Sources */,
+				F4C25C42285DF4DD00570A5C /* HomeRepository.swift in Sources */,
 				F4C25BE0285DAC3100570A5C /* TabBarCoordinator.swift in Sources */,
 				F4FA8E7C285DA58F0044ADB2 /* TabBarController.swift in Sources */,
 				F4C25BE5285DAEBA00570A5C /* HomeViewController.swift in Sources */,
 				F4C25BE2285DAE6600570A5C /* HomeCoordinator.swift in Sources */,
 				F4C25C30285DC05F00570A5C /* Goods.swift in Sources */,
+				F4C25C44285DF59E00570A5C /* HomeData.swift in Sources */,
 				F4C25C39285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift in Sources */,
 				F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */,
 				F4C25C37285DC62900570A5C /* NSObject+Extensions.swift in Sources */,
