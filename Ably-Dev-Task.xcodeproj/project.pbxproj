@@ -7,15 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4C25BDB285DAB0800570A5C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BDA285DAB0800570A5C /* BaseViewController.swift */; };
+		F4C25BDE285DAB4200570A5C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BDD285DAB4200570A5C /* Coordinator.swift */; };
+		F4C25BE0285DAC3100570A5C /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BDF285DAC3100570A5C /* TabBarCoordinator.swift */; };
+		F4C25BE2285DAE6600570A5C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BE1285DAE6600570A5C /* HomeCoordinator.swift */; };
+		F4C25BE5285DAEBA00570A5C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BE4285DAEBA00570A5C /* HomeViewController.swift */; };
+		F4C25BE8285DAFA100570A5C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F4C25BE7285DAFA100570A5C /* Then */; };
+		F4C25BEA285DB08300570A5C /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BE9285DB08300570A5C /* WishListViewController.swift */; };
+		F4C25BEC285DB0B800570A5C /* WishListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BEB285DB0B800570A5C /* WishListCoordinator.swift */; };
+		F4C25C2D285DB8C700570A5C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C25C2C285DB8C700570A5C /* Colors.xcassets */; };
+		F4C25C30285DC05F00570A5C /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C2F285DC05F00570A5C /* Goods.swift */; };
+		F4C25C32285DC1A200570A5C /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C31285DC1A200570A5C /* Banner.swift */; };
+		F4C25C34285DC58800570A5C /* GoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C33285DC58800570A5C /* GoodsCell.swift */; };
+		F4C25C37285DC62900570A5C /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C36285DC62900570A5C /* NSObject+Extensions.swift */; };
+		F4C25C39285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C38285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift */; };
 		F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */; };
-		F4FA8E02285D9CBE0044ADB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E01285D9CBE0044ADB2 /* SceneDelegate.swift */; };
-		F4FA8E04285D9CBE0044ADB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E03285D9CBE0044ADB2 /* ViewController.swift */; };
-		F4FA8E07285D9CBE0044ADB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E05285D9CBE0044ADB2 /* Main.storyboard */; };
 		F4FA8E09285D9CC10044ADB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */; };
 		F4FA8E0C285D9CC10044ADB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E0A285D9CC10044ADB2 /* LaunchScreen.storyboard */; };
 		F4FA8E17285D9CC10044ADB2 /* Ably_Dev_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E16285D9CC10044ADB2 /* Ably_Dev_TaskTests.swift */; };
 		F4FA8E21285D9CC10044ADB2 /* Ably_Dev_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E20285D9CC10044ADB2 /* Ably_Dev_TaskUITests.swift */; };
 		F4FA8E23285D9CC10044ADB2 /* Ably_Dev_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E22285D9CC10044ADB2 /* Ably_Dev_TaskUITestsLaunchTests.swift */; };
+		F4FA8E4B285DA2690044ADB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4FA8E4A285DA2690044ADB2 /* SnapKit */; };
+		F4FA8E6E285DA3600044ADB2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F4FA8E6D285DA3600044ADB2 /* RxCocoa */; };
+		F4FA8E70285DA3600044ADB2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4FA8E6F285DA3600044ADB2 /* RxSwift */; };
+		F4FA8E73285DA3860044ADB2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F4FA8E72285DA3860044ADB2 /* Moya */; };
+		F4FA8E75285DA3860044ADB2 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4FA8E74285DA3860044ADB2 /* ReactiveMoya */; };
+		F4FA8E77285DA3860044ADB2 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4FA8E76285DA3860044ADB2 /* RxMoya */; };
+		F4FA8E7A285DA3AF0044ADB2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F4FA8E79285DA3AF0044ADB2 /* SDWebImage */; };
+		F4FA8E7C285DA58F0044ADB2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E7B285DA58F0044ADB2 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +55,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4C25BDA285DAB0800570A5C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F4C25BDD285DAB4200570A5C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F4C25BDF285DAC3100570A5C /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		F4C25BE1285DAE6600570A5C /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F4C25BE4285DAEBA00570A5C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F4C25BE9285DB08300570A5C /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		F4C25BEB285DB0B800570A5C /* WishListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCoordinator.swift; sourceTree = "<group>"; };
+		F4C25C2C285DB8C700570A5C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F4C25C2F285DC05F00570A5C /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
+		F4C25C31285DC1A200570A5C /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		F4C25C33285DC58800570A5C /* GoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCell.swift; sourceTree = "<group>"; };
+		F4C25C36285DC62900570A5C /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
+		F4C25C38285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCollectionFlowLayout.swift; sourceTree = "<group>"; };
 		F4FA8DFC285D9CBE0044ADB2 /* Ably-Dev-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ably-Dev-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4FA8E01285D9CBE0044ADB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F4FA8E03285D9CBE0044ADB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F4FA8E06285D9CBE0044ADB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4FA8E0B285D9CC10044ADB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4FA8E0D285D9CC10044ADB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +78,7 @@
 		F4FA8E1C285D9CC10044ADB2 /* Ably-Dev-TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ably-Dev-TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FA8E20285D9CC10044ADB2 /* Ably_Dev_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ably_Dev_TaskUITests.swift; sourceTree = "<group>"; };
 		F4FA8E22285D9CC10044ADB2 /* Ably_Dev_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ably_Dev_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F4FA8E7B285DA58F0044ADB2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +86,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4FA8E77285DA3860044ADB2 /* RxMoya in Frameworks */,
+				F4FA8E70285DA3600044ADB2 /* RxSwift in Frameworks */,
+				F4FA8E6E285DA3600044ADB2 /* RxCocoa in Frameworks */,
+				F4C25BE8285DAFA100570A5C /* Then in Frameworks */,
+				F4FA8E7A285DA3AF0044ADB2 /* SDWebImage in Frameworks */,
+				F4FA8E73285DA3860044ADB2 /* Moya in Frameworks */,
+				F4FA8E75285DA3860044ADB2 /* ReactiveMoya in Frameworks */,
+				F4FA8E4B285DA2690044ADB2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +114,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4C25BDC285DAB3800570A5C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F4C25BED285DB10C00570A5C /* Context */,
+				F4C25BDD285DAB4200570A5C /* Coordinator.swift */,
+				F4C25BDF285DAC3100570A5C /* TabBarCoordinator.swift */,
+				F4C25BE1285DAE6600570A5C /* HomeCoordinator.swift */,
+				F4C25BEB285DB0B800570A5C /* WishListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F4C25BE3285DAEAE00570A5C /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				F4FA8E7B285DA58F0044ADB2 /* TabBarController.swift */,
+				F4C25BDA285DAB0800570A5C /* BaseViewController.swift */,
+				F4C25BE4285DAEBA00570A5C /* HomeViewController.swift */,
+				F4C25BE9285DB08300570A5C /* WishListViewController.swift */,
+				F4C25C38285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift */,
+				F4C25C33285DC58800570A5C /* GoodsCell.swift */,
+			);
+			path = Present;
+			sourceTree = "<group>";
+		};
+		F4C25BED285DB10C00570A5C /* Context */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		F4C25BEE285DB21E00570A5C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F4C25C35285DC61E00570A5C /* Extensions */,
+				F4C25C2E285DC05700570A5C /* Model */,
+				F4C25BE3285DAEAE00570A5C /* Present */,
+				F4C25BDC285DAB3800570A5C /* Coordinator */,
+				F4FA8E7D285DA5C20044ADB2 /* ViewModel */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F4C25C2B285DB8B600570A5C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */,
+				F4FA8E0A285D9CC10044ADB2 /* LaunchScreen.storyboard */,
+				F4FA8E0D285D9CC10044ADB2 /* Info.plist */,
+				F4C25C2C285DB8C700570A5C /* Colors.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F4C25C2E285DC05700570A5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4C25C2F285DC05F00570A5C /* Goods.swift */,
+				F4C25C31285DC1A200570A5C /* Banner.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4C25C35285DC61E00570A5C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F4C25C36285DC62900570A5C /* NSObject+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F4FA8DF3285D9CBE0044ADB2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +209,9 @@
 		F4FA8DFE285D9CBE0044ADB2 /* Ably-Dev-Task */ = {
 			isa = PBXGroup;
 			children = (
+				F4C25BEE285DB21E00570A5C /* Source */,
 				F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */,
-				F4FA8E01285D9CBE0044ADB2 /* SceneDelegate.swift */,
-				F4FA8E03285D9CBE0044ADB2 /* ViewController.swift */,
-				F4FA8E05285D9CBE0044ADB2 /* Main.storyboard */,
-				F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */,
-				F4FA8E0A285D9CC10044ADB2 /* LaunchScreen.storyboard */,
-				F4FA8E0D285D9CC10044ADB2 /* Info.plist */,
+				F4C25C2B285DB8B600570A5C /* Resource */,
 			);
 			path = "Ably-Dev-Task";
 			sourceTree = "<group>";
@@ -127,6 +233,13 @@
 			path = "Ably-Dev-TaskUITests";
 			sourceTree = "<group>";
 		};
+		F4FA8E7D285DA5C20044ADB2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +256,16 @@
 			dependencies = (
 			);
 			name = "Ably-Dev-Task";
+			packageProductDependencies = (
+				F4FA8E4A285DA2690044ADB2 /* SnapKit */,
+				F4FA8E6D285DA3600044ADB2 /* RxCocoa */,
+				F4FA8E6F285DA3600044ADB2 /* RxSwift */,
+				F4FA8E72285DA3860044ADB2 /* Moya */,
+				F4FA8E74285DA3860044ADB2 /* ReactiveMoya */,
+				F4FA8E76285DA3860044ADB2 /* RxMoya */,
+				F4FA8E79285DA3AF0044ADB2 /* SDWebImage */,
+				F4C25BE7285DAFA100570A5C /* Then */,
+			);
 			productName = "Ably-Dev-Task";
 			productReference = F4FA8DFC285D9CBE0044ADB2 /* Ably-Dev-Task.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +338,13 @@
 				Base,
 			);
 			mainGroup = F4FA8DF3285D9CBE0044ADB2;
+			packageReferences = (
+				F4FA8E49285DA2690044ADB2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F4FA8E6C285DA3600044ADB2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F4FA8E71285DA3860044ADB2 /* XCRemoteSwiftPackageReference "Moya" */,
+				F4FA8E78285DA3AF0044ADB2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				F4C25BE6285DAFA100570A5C /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = F4FA8DFD285D9CBE0044ADB2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,8 +362,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4FA8E0C285D9CC10044ADB2 /* LaunchScreen.storyboard in Resources */,
+				F4C25C2D285DB8C700570A5C /* Colors.xcassets in Resources */,
 				F4FA8E09285D9CC10044ADB2 /* Assets.xcassets in Resources */,
-				F4FA8E07285D9CBE0044ADB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +388,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FA8E04285D9CBE0044ADB2 /* ViewController.swift in Sources */,
+				F4C25BDB285DAB0800570A5C /* BaseViewController.swift in Sources */,
+				F4C25BEA285DB08300570A5C /* WishListViewController.swift in Sources */,
+				F4C25C34285DC58800570A5C /* GoodsCell.swift in Sources */,
+				F4C25BEC285DB0B800570A5C /* WishListCoordinator.swift in Sources */,
+				F4C25BDE285DAB4200570A5C /* Coordinator.swift in Sources */,
+				F4C25C32285DC1A200570A5C /* Banner.swift in Sources */,
+				F4C25BE0285DAC3100570A5C /* TabBarCoordinator.swift in Sources */,
+				F4FA8E7C285DA58F0044ADB2 /* TabBarController.swift in Sources */,
+				F4C25BE5285DAEBA00570A5C /* HomeViewController.swift in Sources */,
+				F4C25BE2285DAE6600570A5C /* HomeCoordinator.swift in Sources */,
+				F4C25C30285DC05F00570A5C /* Goods.swift in Sources */,
+				F4C25C39285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift in Sources */,
 				F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */,
-				F4FA8E02285D9CBE0044ADB2 /* SceneDelegate.swift in Sources */,
+				F4C25C37285DC62900570A5C /* NSObject+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +438,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F4FA8E05285D9CBE0044ADB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F4FA8E06285D9CBE0044ADB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F4FA8E0A285D9CC10044ADB2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,7 +572,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22VQ353X6R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Ably-Dev-Task/Info.plist";
+				INFOPLIST_FILE = "Ably-Dev-Task/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -467,7 +600,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22VQ353X6R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Ably-Dev-Task/Info.plist";
+				INFOPLIST_FILE = "Ably-Dev-Task/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -602,6 +735,92 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4C25BE6285DAFA100570A5C /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		F4FA8E49285DA2690044ADB2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F4FA8E6C285DA3600044ADB2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		F4FA8E71285DA3860044ADB2 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		F4FA8E78285DA3AF0044ADB2 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4C25BE7285DAFA100570A5C /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4C25BE6285DAFA100570A5C /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		F4FA8E4A285DA2690044ADB2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4FA8E49285DA2690044ADB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		F4FA8E6D285DA3600044ADB2 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4FA8E6C285DA3600044ADB2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		F4FA8E6F285DA3600044ADB2 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4FA8E6C285DA3600044ADB2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F4FA8E72285DA3860044ADB2 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4FA8E71285DA3860044ADB2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		F4FA8E74285DA3860044ADB2 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4FA8E71285DA3860044ADB2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		F4FA8E76285DA3860044ADB2 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4FA8E71285DA3860044ADB2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		F4FA8E79285DA3AF0044ADB2 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4FA8E78285DA3AF0044ADB2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F4FA8DF4285D9CBE0044ADB2 /* Project object */;
 }
