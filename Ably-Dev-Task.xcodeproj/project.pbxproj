@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */; };
+		F4FA8E02285D9CBE0044ADB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E01285D9CBE0044ADB2 /* SceneDelegate.swift */; };
+		F4FA8E04285D9CBE0044ADB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E03285D9CBE0044ADB2 /* ViewController.swift */; };
+		F4FA8E07285D9CBE0044ADB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E05285D9CBE0044ADB2 /* Main.storyboard */; };
+		F4FA8E09285D9CC10044ADB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */; };
+		F4FA8E0C285D9CC10044ADB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E0A285D9CC10044ADB2 /* LaunchScreen.storyboard */; };
+		F4FA8E17285D9CC10044ADB2 /* Ably_Dev_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E16285D9CC10044ADB2 /* Ably_Dev_TaskTests.swift */; };
+		F4FA8E21285D9CC10044ADB2 /* Ably_Dev_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E20285D9CC10044ADB2 /* Ably_Dev_TaskUITests.swift */; };
+		F4FA8E23285D9CC10044ADB2 /* Ably_Dev_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8E22285D9CC10044ADB2 /* Ably_Dev_TaskUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4FA8E13285D9CC10044ADB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4FA8DF4285D9CBE0044ADB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4FA8DFB285D9CBE0044ADB2;
+			remoteInfo = "Ably-Dev-Task";
+		};
+		F4FA8E1D285D9CC10044ADB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4FA8DF4285D9CBE0044ADB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4FA8DFB285D9CBE0044ADB2;
+			remoteInfo = "Ably-Dev-Task";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F4FA8DFC285D9CBE0044ADB2 /* Ably-Dev-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ably-Dev-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4FA8E01285D9CBE0044ADB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F4FA8E03285D9CBE0044ADB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4FA8E06285D9CBE0044ADB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4FA8E0B285D9CC10044ADB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4FA8E0D285D9CC10044ADB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4FA8E12285D9CC10044ADB2 /* Ably-Dev-TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ably-Dev-TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4FA8E16285D9CC10044ADB2 /* Ably_Dev_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ably_Dev_TaskTests.swift; sourceTree = "<group>"; };
+		F4FA8E1C285D9CC10044ADB2 /* Ably-Dev-TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ably-Dev-TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4FA8E20285D9CC10044ADB2 /* Ably_Dev_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ably_Dev_TaskUITests.swift; sourceTree = "<group>"; };
+		F4FA8E22285D9CC10044ADB2 /* Ably_Dev_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ably_Dev_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4FA8DF9285D9CBE0044ADB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4FA8E0F285D9CC10044ADB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4FA8E19285D9CC10044ADB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4FA8DF3285D9CBE0044ADB2 = {
+			isa = PBXGroup;
+			children = (
+				F4FA8DFE285D9CBE0044ADB2 /* Ably-Dev-Task */,
+				F4FA8E15285D9CC10044ADB2 /* Ably-Dev-TaskTests */,
+				F4FA8E1F285D9CC10044ADB2 /* Ably-Dev-TaskUITests */,
+				F4FA8DFD285D9CBE0044ADB2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4FA8DFD285D9CBE0044ADB2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4FA8DFC285D9CBE0044ADB2 /* Ably-Dev-Task.app */,
+				F4FA8E12285D9CC10044ADB2 /* Ably-Dev-TaskTests.xctest */,
+				F4FA8E1C285D9CC10044ADB2 /* Ably-Dev-TaskUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4FA8DFE285D9CBE0044ADB2 /* Ably-Dev-Task */ = {
+			isa = PBXGroup;
+			children = (
+				F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */,
+				F4FA8E01285D9CBE0044ADB2 /* SceneDelegate.swift */,
+				F4FA8E03285D9CBE0044ADB2 /* ViewController.swift */,
+				F4FA8E05285D9CBE0044ADB2 /* Main.storyboard */,
+				F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */,
+				F4FA8E0A285D9CC10044ADB2 /* LaunchScreen.storyboard */,
+				F4FA8E0D285D9CC10044ADB2 /* Info.plist */,
+			);
+			path = "Ably-Dev-Task";
+			sourceTree = "<group>";
+		};
+		F4FA8E15285D9CC10044ADB2 /* Ably-Dev-TaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4FA8E16285D9CC10044ADB2 /* Ably_Dev_TaskTests.swift */,
+			);
+			path = "Ably-Dev-TaskTests";
+			sourceTree = "<group>";
+		};
+		F4FA8E1F285D9CC10044ADB2 /* Ably-Dev-TaskUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F4FA8E20285D9CC10044ADB2 /* Ably_Dev_TaskUITests.swift */,
+				F4FA8E22285D9CC10044ADB2 /* Ably_Dev_TaskUITestsLaunchTests.swift */,
+			);
+			path = "Ably-Dev-TaskUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4FA8DFB285D9CBE0044ADB2 /* Ably-Dev-Task */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4FA8E26285D9CC10044ADB2 /* Build configuration list for PBXNativeTarget "Ably-Dev-Task" */;
+			buildPhases = (
+				F4FA8DF8285D9CBE0044ADB2 /* Sources */,
+				F4FA8DF9285D9CBE0044ADB2 /* Frameworks */,
+				F4FA8DFA285D9CBE0044ADB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ably-Dev-Task";
+			productName = "Ably-Dev-Task";
+			productReference = F4FA8DFC285D9CBE0044ADB2 /* Ably-Dev-Task.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4FA8E11285D9CC10044ADB2 /* Ably-Dev-TaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4FA8E29285D9CC10044ADB2 /* Build configuration list for PBXNativeTarget "Ably-Dev-TaskTests" */;
+			buildPhases = (
+				F4FA8E0E285D9CC10044ADB2 /* Sources */,
+				F4FA8E0F285D9CC10044ADB2 /* Frameworks */,
+				F4FA8E10285D9CC10044ADB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4FA8E14285D9CC10044ADB2 /* PBXTargetDependency */,
+			);
+			name = "Ably-Dev-TaskTests";
+			productName = "Ably-Dev-TaskTests";
+			productReference = F4FA8E12285D9CC10044ADB2 /* Ably-Dev-TaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F4FA8E1B285D9CC10044ADB2 /* Ably-Dev-TaskUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4FA8E2C285D9CC10044ADB2 /* Build configuration list for PBXNativeTarget "Ably-Dev-TaskUITests" */;
+			buildPhases = (
+				F4FA8E18285D9CC10044ADB2 /* Sources */,
+				F4FA8E19285D9CC10044ADB2 /* Frameworks */,
+				F4FA8E1A285D9CC10044ADB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4FA8E1E285D9CC10044ADB2 /* PBXTargetDependency */,
+			);
+			name = "Ably-Dev-TaskUITests";
+			productName = "Ably-Dev-TaskUITests";
+			productReference = F4FA8E1C285D9CC10044ADB2 /* Ably-Dev-TaskUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4FA8DF4285D9CBE0044ADB2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					F4FA8DFB285D9CBE0044ADB2 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					F4FA8E11285D9CC10044ADB2 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = F4FA8DFB285D9CBE0044ADB2;
+					};
+					F4FA8E1B285D9CC10044ADB2 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = F4FA8DFB285D9CBE0044ADB2;
+					};
+				};
+			};
+			buildConfigurationList = F4FA8DF7285D9CBE0044ADB2 /* Build configuration list for PBXProject "Ably-Dev-Task" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4FA8DF3285D9CBE0044ADB2;
+			productRefGroup = F4FA8DFD285D9CBE0044ADB2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4FA8DFB285D9CBE0044ADB2 /* Ably-Dev-Task */,
+				F4FA8E11285D9CC10044ADB2 /* Ably-Dev-TaskTests */,
+				F4FA8E1B285D9CC10044ADB2 /* Ably-Dev-TaskUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4FA8DFA285D9CBE0044ADB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FA8E0C285D9CC10044ADB2 /* LaunchScreen.storyboard in Resources */,
+				F4FA8E09285D9CC10044ADB2 /* Assets.xcassets in Resources */,
+				F4FA8E07285D9CBE0044ADB2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4FA8E10285D9CC10044ADB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4FA8E1A285D9CC10044ADB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4FA8DF8285D9CBE0044ADB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FA8E04285D9CBE0044ADB2 /* ViewController.swift in Sources */,
+				F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */,
+				F4FA8E02285D9CBE0044ADB2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4FA8E0E285D9CC10044ADB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FA8E17285D9CC10044ADB2 /* Ably_Dev_TaskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4FA8E18285D9CC10044ADB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FA8E21285D9CC10044ADB2 /* Ably_Dev_TaskUITests.swift in Sources */,
+				F4FA8E23285D9CC10044ADB2 /* Ably_Dev_TaskUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4FA8E14285D9CC10044ADB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4FA8DFB285D9CBE0044ADB2 /* Ably-Dev-Task */;
+			targetProxy = F4FA8E13285D9CC10044ADB2 /* PBXContainerItemProxy */;
+		};
+		F4FA8E1E285D9CC10044ADB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4FA8DFB285D9CBE0044ADB2 /* Ably-Dev-Task */;
+			targetProxy = F4FA8E1D285D9CC10044ADB2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4FA8E05285D9CBE0044ADB2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4FA8E06285D9CBE0044ADB2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F4FA8E0A285D9CC10044ADB2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4FA8E0B285D9CC10044ADB2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4FA8E24285D9CC10044ADB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4FA8E25285D9CC10044ADB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4FA8E27285D9CC10044ADB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22VQ353X6R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ably-Dev-Task/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taewoo.Ably-Dev-Task";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4FA8E28285D9CC10044ADB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22VQ353X6R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ably-Dev-Task/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taewoo.Ably-Dev-Task";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F4FA8E2A285D9CC10044ADB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22VQ353X6R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taewoo.Ably-Dev-TaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ably-Dev-Task.app/Ably-Dev-Task";
+			};
+			name = Debug;
+		};
+		F4FA8E2B285D9CC10044ADB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22VQ353X6R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taewoo.Ably-Dev-TaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ably-Dev-Task.app/Ably-Dev-Task";
+			};
+			name = Release;
+		};
+		F4FA8E2D285D9CC10044ADB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22VQ353X6R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taewoo.Ably-Dev-TaskUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Ably-Dev-Task";
+			};
+			name = Debug;
+		};
+		F4FA8E2E285D9CC10044ADB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22VQ353X6R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taewoo.Ably-Dev-TaskUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Ably-Dev-Task";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4FA8DF7285D9CBE0044ADB2 /* Build configuration list for PBXProject "Ably-Dev-Task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FA8E24285D9CC10044ADB2 /* Debug */,
+				F4FA8E25285D9CC10044ADB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4FA8E26285D9CC10044ADB2 /* Build configuration list for PBXNativeTarget "Ably-Dev-Task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FA8E27285D9CC10044ADB2 /* Debug */,
+				F4FA8E28285D9CC10044ADB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4FA8E29285D9CC10044ADB2 /* Build configuration list for PBXNativeTarget "Ably-Dev-TaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FA8E2A285D9CC10044ADB2 /* Debug */,
+				F4FA8E2B285D9CC10044ADB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4FA8E2C285D9CC10044ADB2 /* Build configuration list for PBXNativeTarget "Ably-Dev-TaskUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FA8E2D285D9CC10044ADB2 /* Debug */,
+				F4FA8E2E285D9CC10044ADB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4FA8DF4285D9CBE0044ADB2 /* Project object */;
+}
