@@ -35,10 +35,10 @@ struct Constant {
         init(type: BuildType = .release) {
             switch type {
             case .release:
-                url = "http://d2bab9i9pr8lds.cloudfront.net"
+                url = "https://d2bab9i9pr8lds.cloudfront.net"
                 
             case .debug:
-                url = "http://d2bab9i9pr8lds.cloudfront.net"
+                url = "https://d2bab9i9pr8lds.cloudfront.net"
                 
             }
         }

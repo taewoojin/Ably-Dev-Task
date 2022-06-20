@@ -8,5 +8,5 @@
 
 struct HomeData: Codable, Hashable {
     let banners: [Banner]
-    let goods: [Goods]
+    var goods: [Goods]
 }

@@ -85,7 +85,6 @@ class HomeViewController: BaseViewController {
         
         collectionView.delegate = self
         collectionView.refreshControl = refreshControl
-        collectionView.showsVerticalScrollIndicator = false
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
         collectionView.register(GoodsCell.self, forCellWithReuseIdentifier: GoodsCell.typeName)
         collectionView.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.typeName)
@@ -113,6 +112,17 @@ class HomeViewController: BaseViewController {
             .bind(to: viewModel.action)
             .disposed(by: disposeBag)
         
+        collectionView.rx.willDisplayCell
+            .filter { [unowned self] cell, indexPath in
+                guard let goodsCount = self.viewModel.store.homeData?.goods.count else {
+                    return false
+                }
+                return goodsCount - 2 == indexPath.item
+            }
+            .map { (_, _) in .fetchGoods }
+            .bind(to: viewModel.action)
+            .disposed(by: disposeBag)
+        
         refreshControl.rx.controlEvent(.valueChanged)
             .map { .refresh }
             .bind(to: viewModel.action)
@@ -131,6 +141,7 @@ class HomeViewController: BaseViewController {
         
         viewModel.currentStore
             .map { $0.isRefresh }
+            .distinctUntilChanged()
             .bind(to: refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
     }

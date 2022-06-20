@@ -13,7 +13,7 @@ class HomeViewModel {
     
     enum Action {
         case fetchHomeData
-        case fetchGoods(lastId: Int)
+        case fetchGoods
         case refresh
     }
     
@@ -70,9 +70,13 @@ class HomeViewModel {
                         ])
                     }
             
-        case .fetchGoods(let id):
+        case .fetchGoods:
+            guard let lastId = store.homeData?.goods.last?.id else {
+                return .just(.setGoods([]))
+            }
+            
             return service
-                .fetchGoods(with: id)
+                .fetchGoods(with: lastId)
                 .asObservable()
                 .map { .setGoods($0) }
             
@@ -88,7 +92,7 @@ class HomeViewModel {
             store.homeData = data
             
         case .setGoods(let goods):
-            store.goods = goods
+            store.homeData?.goods.append(contentsOf: goods)
             
         case .setIsRefresh(let isRefresh):
             store.isRefresh = isRefresh
