@@ -7,6 +7,7 @@
 
 import UIKit
 
+import SDWebImage
 import SnapKit
 import Then
 
@@ -38,6 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tabBarCoordinator.start()
         applyAppearance()
+        
+        
+        // TODO: SDWebImageManager 설정
+        SDWebImageDownloader.shared.config.downloadTimeout = 60
         
         return true
     }

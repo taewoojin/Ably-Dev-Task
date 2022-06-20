@@ -14,16 +14,19 @@ class HomeViewModel {
     enum Action {
         case fetchHomeData
         case fetchGoods(lastId: Int)
+        case refresh
     }
     
     enum Mutation {
         case setHomeData(HomeData?)
         case setGoods([Goods])
+        case setIsRefresh(Bool)
     }
     
     struct Store {
         var homeData: HomeData?
         var goods: [Goods] = []
+        var isRefresh: Bool = false
     }
     
     
@@ -58,9 +61,14 @@ class HomeViewModel {
             
         case .fetchHomeData:
             return service
-                .fetchHomeData()
-                .asObservable()
-                .map { .setHomeData($0) }
+                    .fetchHomeData()
+                    .asObservable()
+                    .flatMap { data -> Observable<Mutation> in
+                        return Observable.merge([
+                            .just(.setHomeData(data)),
+                            .just(.setIsRefresh(false))
+                        ])
+                    }
             
         case .fetchGoods(let id):
             return service
@@ -68,6 +76,8 @@ class HomeViewModel {
                 .asObservable()
                 .map { .setGoods($0) }
             
+        case .refresh:
+            return .just(.setIsRefresh(true))
             
         }
     }
@@ -79,6 +89,10 @@ class HomeViewModel {
             
         case .setGoods(let goods):
             store.goods = goods
+            
+        case .setIsRefresh(let isRefresh):
+            store.isRefresh = isRefresh
+            
         }
         
         return .just(store)

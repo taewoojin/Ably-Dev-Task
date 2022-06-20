@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A470D2285FFA640009C890 /* PaddingLabel.swift */; };
 		F4C25BDB285DAB0800570A5C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BDA285DAB0800570A5C /* BaseViewController.swift */; };
 		F4C25BDE285DAB4200570A5C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BDD285DAB4200570A5C /* Coordinator.swift */; };
 		F4C25BE0285DAC3100570A5C /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25BDF285DAC3100570A5C /* TabBarCoordinator.swift */; };
@@ -27,6 +28,11 @@
 		F4C25C44285DF59E00570A5C /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C43285DF59E00570A5C /* HomeData.swift */; };
 		F4C25C46285DF7D400570A5C /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C45285DF7D400570A5C /* HomeService.swift */; };
 		F4C25C48285DF89E00570A5C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C47285DF89E00570A5C /* HomeViewModel.swift */; };
+		F4C25C4A285E190800570A5C /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C49285E190800570A5C /* BannerCell.swift */; };
+		F4C25C4C285F66A100570A5C /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C4B285F66A100570A5C /* UIViewController+Rx.swift */; };
+		F4C25C4F285F69DD00570A5C /* RxOptional in Frameworks */ = {isa = PBXBuildFile; productRef = F4C25C4E285F69DD00570A5C /* RxOptional */; };
+		F4C25C51285F6CEA00570A5C /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C50285F6CEA00570A5C /* Int+Extensions.swift */; };
+		F4C25C53285FEB3000570A5C /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C25C52285FEB3000570A5C /* UIImageView+Extensions.swift */; };
 		F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */; };
 		F4FA8E09285D9CC10044ADB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */; };
 		F4FA8E0C285D9CC10044ADB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FA8E0A285D9CC10044ADB2 /* LaunchScreen.storyboard */; };
@@ -61,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4A470D2285FFA640009C890 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F4C25BDA285DAB0800570A5C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F4C25BDD285DAB4200570A5C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F4C25BDF285DAC3100570A5C /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -80,6 +87,10 @@
 		F4C25C43285DF59E00570A5C /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
 		F4C25C45285DF7D400570A5C /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		F4C25C47285DF89E00570A5C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F4C25C49285E190800570A5C /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		F4C25C4B285F66A100570A5C /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		F4C25C50285F6CEA00570A5C /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		F4C25C52285FEB3000570A5C /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		F4FA8DFC285D9CBE0044ADB2 /* Ably-Dev-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ably-Dev-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FA8E08285D9CC10044ADB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +114,7 @@
 				F4FA8E6E285DA3600044ADB2 /* RxCocoa in Frameworks */,
 				F4C25BE8285DAFA100570A5C /* Then in Frameworks */,
 				F4FA8E7A285DA3AF0044ADB2 /* SDWebImage in Frameworks */,
+				F4C25C4F285F69DD00570A5C /* RxOptional in Frameworks */,
 				F4FA8E73285DA3860044ADB2 /* Moya in Frameworks */,
 				F4FA8E75285DA3860044ADB2 /* ReactiveMoya in Frameworks */,
 				F4FA8E4B285DA2690044ADB2 /* SnapKit in Frameworks */,
@@ -126,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4A470D1285FFA350009C890 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F4A470D2285FFA640009C890 /* PaddingLabel.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		F4C25BDC285DAB3800570A5C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +164,7 @@
 				F4FA8E7B285DA58F0044ADB2 /* TabBarController.swift */,
 				F4C25BDA285DAB0800570A5C /* BaseViewController.swift */,
 				F4C25BE4285DAEBA00570A5C /* HomeViewController.swift */,
+				F4C25C49285E190800570A5C /* BannerCell.swift */,
 				F4C25BE9285DB08300570A5C /* WishListViewController.swift */,
 				F4C25C38285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift */,
 				F4C25C33285DC58800570A5C /* GoodsCell.swift */,
@@ -161,6 +182,7 @@
 		F4C25BEE285DB21E00570A5C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F4A470D1285FFA350009C890 /* Component */,
 				F4FA8DFF285D9CBE0044ADB2 /* AppDelegate.swift */,
 				F4C25C3F285DF2C200570A5C /* Constant.swift */,
 				F4C25BDC285DAB3800570A5C /* Coordinator */,
@@ -200,6 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				F4C25C36285DC62900570A5C /* NSObject+Extensions.swift */,
+				F4C25C4B285F66A100570A5C /* UIViewController+Rx.swift */,
+				F4C25C50285F6CEA00570A5C /* Int+Extensions.swift */,
+				F4C25C52285FEB3000570A5C /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -307,6 +332,7 @@
 				F4FA8E76285DA3860044ADB2 /* RxMoya */,
 				F4FA8E79285DA3AF0044ADB2 /* SDWebImage */,
 				F4C25BE7285DAFA100570A5C /* Then */,
+				F4C25C4E285F69DD00570A5C /* RxOptional */,
 			);
 			productName = "Ably-Dev-Task";
 			productReference = F4FA8DFC285D9CBE0044ADB2 /* Ably-Dev-Task.app */;
@@ -386,6 +412,7 @@
 				F4FA8E71285DA3860044ADB2 /* XCRemoteSwiftPackageReference "Moya" */,
 				F4FA8E78285DA3AF0044ADB2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				F4C25BE6285DAFA100570A5C /* XCRemoteSwiftPackageReference "Then" */,
+				F4C25C4D285F69DD00570A5C /* XCRemoteSwiftPackageReference "RxOptional" */,
 			);
 			productRefGroup = F4FA8DFD285D9CBE0044ADB2 /* Products */;
 			projectDirPath = "";
@@ -436,19 +463,24 @@
 				F4C25C48285DF89E00570A5C /* HomeViewModel.swift in Sources */,
 				F4C25C40285DF2C200570A5C /* Constant.swift in Sources */,
 				F4C25BEC285DB0B800570A5C /* WishListCoordinator.swift in Sources */,
+				F4C25C53285FEB3000570A5C /* UIImageView+Extensions.swift in Sources */,
 				F4C25C3E285DF1B700570A5C /* HomeRouter.swift in Sources */,
 				F4C25BDE285DAB4200570A5C /* Coordinator.swift in Sources */,
 				F4C25C46285DF7D400570A5C /* HomeService.swift in Sources */,
 				F4C25C32285DC1A200570A5C /* Banner.swift in Sources */,
+				F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */,
 				F4C25C42285DF4DD00570A5C /* HomeRepository.swift in Sources */,
 				F4C25BE0285DAC3100570A5C /* TabBarCoordinator.swift in Sources */,
 				F4FA8E7C285DA58F0044ADB2 /* TabBarController.swift in Sources */,
 				F4C25BE5285DAEBA00570A5C /* HomeViewController.swift in Sources */,
+				F4C25C4A285E190800570A5C /* BannerCell.swift in Sources */,
+				F4C25C51285F6CEA00570A5C /* Int+Extensions.swift in Sources */,
 				F4C25BE2285DAE6600570A5C /* HomeCoordinator.swift in Sources */,
 				F4C25C30285DC05F00570A5C /* Goods.swift in Sources */,
 				F4C25C44285DF59E00570A5C /* HomeData.swift in Sources */,
 				F4C25C39285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift in Sources */,
 				F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */,
+				F4C25C4C285F66A100570A5C /* UIViewController+Rx.swift in Sources */,
 				F4C25C37285DC62900570A5C /* NSObject+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,7 +655,6 @@
 				INFOPLIST_FILE = "Ably-Dev-Task/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -651,7 +682,6 @@
 				INFOPLIST_FILE = "Ably-Dev-Task/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -793,6 +823,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		F4C25C4D285F69DD00570A5C /* XCRemoteSwiftPackageReference "RxOptional" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxOptional";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		F4FA8E49285DA2690044ADB2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -832,6 +870,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4C25BE6285DAFA100570A5C /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		F4C25C4E285F69DD00570A5C /* RxOptional */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4C25C4D285F69DD00570A5C /* XCRemoteSwiftPackageReference "RxOptional" */;
+			productName = RxOptional;
 		};
 		F4FA8E4A285DA2690044ADB2 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

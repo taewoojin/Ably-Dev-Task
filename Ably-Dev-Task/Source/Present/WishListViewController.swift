@@ -49,14 +49,13 @@ class WishListViewController: BaseViewController {
         super.viewDidLoad()
 
         configureDataSource()
-        
-        navigationItem.title = "좋아요"
-        
         datasource?.apply(snapshot(), animatingDifferences: false)
     }
     
     override func setupAttributes() {
         super.setupAttributes()
+        
+        navigationItem.title = "좋아요"
         
         collectionView.delegate = self
 //        collectionView.backgroundColor = .clear

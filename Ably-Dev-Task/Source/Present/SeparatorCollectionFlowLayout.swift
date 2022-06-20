@@ -6,19 +6,23 @@
 //
 
 import Foundation
-
-
 import UIKit
+
 
 private let separatorDecorationView = "separator"
 
 final class SeparatorCollectionFlowLayout: UICollectionViewCompositionalLayout {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    
+    override init(sectionProvider: @escaping UICollectionViewCompositionalLayoutSectionProvider) {
+        super.init(sectionProvider: sectionProvider)
         register(SeparatorView.self, forDecorationViewOfKind: separatorDecorationView)
     }
-
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let layoutAttributes = super.layoutAttributesForElements(in: rect) ?? []
         let lineWidth: CGFloat = 1
@@ -43,10 +47,10 @@ final class SeparatorCollectionFlowLayout: UICollectionViewCompositionalLayout {
 
 }
 
-private final class SeparatorView: UICollectionReusableView {
+final class SeparatorView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .red
+        self.backgroundColor = .systemGray5
     }
 
     required init?(coder aDecoder: NSCoder) {

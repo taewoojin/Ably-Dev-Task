@@ -8,27 +8,32 @@
 import UIKit
 
 import RxSwift
+import SDWebImage
 
 
 class GoodsCell: UICollectionViewCell {
 
     // MARK: UI
     
-//    let containerView = UIView()
-    
     lazy var containerStackView = UIStackView(arrangedSubviews: [imageView, contentStackView])
     
-    let imageView = UIImageView()
-    
-    lazy var contentStackView = UIStackView(arrangedSubviews: [priceStcakView, nameLabel])
+    lazy var contentStackView = UIStackView(arrangedSubviews: [priceStcakView, nameLabel, optionStackView])
     
     lazy var priceStcakView = UIStackView(arrangedSubviews: [discountRateLabel, priceLabel])
+    
+    lazy var optionStackView = UIStackView(arrangedSubviews: [newBadgeLabel, buyingCountLabel])
+    
+    let imageView = UIImageView()
     
     let discountRateLabel = UILabel()
     
     let priceLabel = UILabel()
     
     let nameLabel = UILabel()
+    
+    let newBadgeLabel = PaddingLabel(top: 2, right: 3, bottom: 2, left: 3)
+    
+    let buyingCountLabel = UILabel()
     
     let separatorView = UIView()
     
@@ -65,24 +70,35 @@ class GoodsCell: UICollectionViewCell {
         imageView.backgroundColor = .systemGray2
         
         contentStackView.axis = .vertical
-        contentStackView.spacing = 10
+        contentStackView.spacing = 5
         contentStackView.alignment = .leading
+        contentStackView.setCustomSpacing(15, after: nameLabel)
         
-        priceStcakView.axis = .horizontal
         priceStcakView.spacing = 4
         priceStcakView.alignment = .center
         
-        discountRateLabel.font = .preferredFont(forTextStyle: .title2)
+        optionStackView.alignment = .center
+        optionStackView.spacing = 4
+        
+        discountRateLabel.font = .preferredFont(forTextStyle: .headline)
         discountRateLabel.textColor = UIColor(named: "main")
-        discountRateLabel.text = "10%"
         
-        priceLabel.font = .preferredFont(forTextStyle: .title3)
+        priceLabel.font = .preferredFont(forTextStyle: .headline)
         priceLabel.textColor = UIColor(named: "text_primary")
-        priceLabel.text = "8,200"
         
-        nameLabel.font = .preferredFont(forTextStyle: .body)
+        nameLabel.font = .preferredFont(forTextStyle: .subheadline)
         nameLabel.textColor = UIColor(named: "text_secondary")
-        nameLabel.text = "회색 가디건"
+        nameLabel.numberOfLines = 0
+        
+        newBadgeLabel.text = "NEW"
+        newBadgeLabel.font = .preferredFont(forTextStyle: .caption2)
+        newBadgeLabel.layer.borderColor = UIColor.black.cgColor
+        newBadgeLabel.layer.borderWidth = 1
+        newBadgeLabel.layer.cornerRadius = 2
+        newBadgeLabel.layer.masksToBounds = true
+        
+        buyingCountLabel.font = .preferredFont(forTextStyle: .caption1)
+        buyingCountLabel.textColor = UIColor(named: "text_secondary")
         
         separatorView.backgroundColor = .systemGray4
     }
@@ -90,28 +106,40 @@ class GoodsCell: UICollectionViewCell {
     func setupLayout() {
         contentView.addSubview(containerStackView)
         containerStackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-//            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.top.equalToSuperview().inset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
-        
-//        contentView.addSubview(separatorView)
-//        separatorView.snp.makeConstraints {
-//            $0.top.equalTo(containerStackView.snp.bottom)
-//            $0.leading.trailing.bottom.equalToSuperview()
-//            $0.height.equalTo(2)
-//        }
         
         imageView.snp.makeConstraints {
             $0.width.height.equalTo(100)
         }
-        
-        
-//        containerStackView.setCustomSpacing(<#T##spacing: CGFloat##CGFloat#>, after: <#T##UIView#>)
-        
     }
     
     func configure(with item: Goods) {
+        let discountRate = CGFloat(item.actualPrice - item.price) / CGFloat(item.actualPrice) * 100
+        let roundedDiscountRate = Int(round(discountRate))
+        discountRateLabel.isHidden = roundedDiscountRate <= 0
+        discountRateLabel.text = "\(roundedDiscountRate)%"
         
+        priceLabel.text = "\(item.price.withCommas())원"
+        nameLabel.text = item.name
+        
+        imageView.sd_imageIndicator?.startAnimatingIndicator()
+        
+        // TODO: SDWebImageRetryFailed (RETRY 옵션 추가)
+        imageView.sd_setImage(with: URL(string: item.image)) { [weak self] image, error, type, url in
+            if error != nil {
+                // TODO: 로드 실패 로직
+            }
+            
+            self?.imageView.sd_imageIndicator?.stopAnimatingIndicator()
+        }
+        
+        newBadgeLabel.isHidden = !item.isNew
+        
+        buyingCountLabel.isHidden = item.sellCount < 10
+        buyingCountLabel.text = "\(item.sellCount.withCommas())개 구매중"
     }
 
 }
