@@ -78,7 +78,7 @@ class HomeViewModel {
                                 .just(.setIsRefresh(false))
                             ])
                             
-                        case .failure(let error):
+                        case .failure(_):
                             // TODO: 상황에 따른 에러 처리
                             return .just(.setIsRefresh(false))
                             
@@ -99,7 +99,7 @@ class HomeViewModel {
                         let goods = self.checkBookmarking(with: goods)
                         return .just(.setGoods(goods))
                         
-                    case .failure(let error):
+                    case .failure(_):
                         // TODO: 상황에 따른 에러 처리
                         return .empty()
                         

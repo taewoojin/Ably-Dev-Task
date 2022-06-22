@@ -18,7 +18,7 @@ extension UIImageView {
         // TODO: SDWebImageRetryFailed (RETRY 옵션 추가)
         self.sd_setImage(with: url) { [weak self] image, error, type, url in
             if error != nil {
-                // TODO: 로드 실패 로직
+                // TODO: 로드 실패 로직  ex) default 이미지 설정..
             }
             
             self?.sd_imageIndicator?.stopAnimatingIndicator()

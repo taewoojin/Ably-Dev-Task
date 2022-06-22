@@ -70,13 +70,6 @@ class TabBarController: UITabBarController {
         delegate = self
         setViewControllers(tabControllers, animated: true)
         selectedIndex = 0
-//        tabBar.isTranslucent = false
-//        tabBar.add(
-//            borders: [.top],
-//            color: UIColor(red: 36 / 255, green: 36 / 255, blue: 36 / 255, alpha: 1),
-//            width: 1
-//        )
-//        tabBar.backgroundImage = UIColor(named: "background")?.as1ptImage()
         tabBar.backgroundColor = UIColor(named: "tabView")
         tabBar.tintColor = UIColor(named: "tabItem")
     }

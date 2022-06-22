@@ -42,9 +42,7 @@ class TabBarCoordinator: NSObject, Coordinator {
     }
     
     
-    // MARK: Local Methods
-    
-    /// tabBarItem 설정
+    // tabBarItem 설정
     func getTabController(item: TabBarItem) -> UINavigationController {
         let tabItem = UITabBarItem(
             title: item.title,

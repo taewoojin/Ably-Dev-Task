@@ -218,8 +218,8 @@
 		F407E5942862D73900EB280A /* Rx */ = {
 			isa = PBXGroup;
 			children = (
-				F4C25C4B285F66A100570A5C /* UIViewController+Rx.swift */,
 				F407E5A72863376400EB280A /* Moya+Rx.swift */,
+				F4C25C4B285F66A100570A5C /* UIViewController+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -261,8 +261,8 @@
 		F4A470D1285FFA350009C890 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				F407E58F2862D67100EB280A /* UICollectionFlowLayout */,
 				F4A470D2285FFA640009C890 /* PaddingLabel.swift */,
+				F407E58F2862D67100EB280A /* UICollectionFlowLayout */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -278,11 +278,11 @@
 		F4C25BDC285DAB3800570A5C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				F4C25BED285DB10C00570A5C /* Context */,
 				F4C25BDD285DAB4200570A5C /* Coordinator.swift */,
 				F4C25BE1285DAE6600570A5C /* HomeCoordinator.swift */,
 				F4C25BDF285DAC3100570A5C /* TabBarCoordinator.swift */,
 				F4C25BEB285DB0B800570A5C /* WishListCoordinator.swift */,
+				F4C25BED285DB10C00570A5C /* Context */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";

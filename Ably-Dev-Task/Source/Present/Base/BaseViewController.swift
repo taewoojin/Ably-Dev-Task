@@ -83,8 +83,6 @@ class BaseViewController: UIViewController {
     
     func setupAttributes() {
         // Override Attributes
-//        view.backgroundColor = .black
-//        view.backgroundColor = Color.mainContainerBackgroundColor
     }
     
     func setupLocalization() {

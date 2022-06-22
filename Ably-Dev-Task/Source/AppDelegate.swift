@@ -40,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarCoordinator.start()
         applyAppearance()
         
-        
         // TODO: SDWebImageManager 설정
         SDWebImageDownloader.shared.config.downloadTimeout = 60
         
@@ -58,8 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
-//        UINavigationBar.appearance().tintColor = .clear
-//        UINavigationBar.appearance().isTranslucent = true
         
     }
 
