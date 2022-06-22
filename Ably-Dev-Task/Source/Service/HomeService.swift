@@ -31,15 +31,15 @@ struct HomeService: HomeServiceProtocol {
     
     let repository: HomeRepositoryProtocol
     
-    let wishRepository: WishRepository
+    let wishGoodsRepository: WishGoodsRepository
     
     
     init(
         repository: HomeRepositoryProtocol = HomeRepository(),
-        wishRepository: WishRepository = WishRepository(manager: RealmDataManager())
+        wishGoodsRepository: WishGoodsRepository = WishGoodsRepository(manager: RealmDataManager())
     ) {
         self.repository = repository
-        self.wishRepository = wishRepository
+        self.wishGoodsRepository = wishGoodsRepository
     }
     
     func fetchHomeData() -> Single<HomeData?> {
@@ -58,11 +58,11 @@ struct HomeService: HomeServiceProtocol {
     
     func bookmark(with goods: Goods) -> Single<Bool> {
         return Single.create { single in
-            wishRepository.save(goods)
+            wishGoodsRepository.add(goods)
             single(.success(true))
             
 //            do {
-//                try wishRepository.save(goods)
+//                try wishGoodsRepository.save(goods)
 //                single(.success(true))
 //            } catch {
 //                single(.failure(error))
@@ -74,7 +74,7 @@ struct HomeService: HomeServiceProtocol {
     
     func unbookmark(with goods: Goods) -> Single<Bool> {
         return Single.create { single in
-            wishRepository.delete(goods)
+            wishGoodsRepository.delete(goods)
             single(.success(true))
             
             return Disposables.create()
@@ -83,8 +83,11 @@ struct HomeService: HomeServiceProtocol {
     
     func fetchBookmarkedGoodsList() -> Single<[Goods]> {
         return Single.create { single in
-//            let wishGoods = wishRepository.fetchValue(WishGoods.self, predicate: nil, sorted: nil)
-            wishRepository.fetch(WishGoods.self, predicate: nil, sorted: nil) { wishGoods in
+            wishGoodsRepository.fetch(
+                WishGoods.self,
+                predicate: nil,
+                sorted: Sorted(key: "id", ascending: true)
+            ) { wishGoods in
                 let goods = wishGoods.map { Goods.mapFromPersistenceObject($0) }
                 single(.success(goods))
             }

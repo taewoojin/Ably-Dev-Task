@@ -183,16 +183,7 @@ class GoodsCell: UICollectionViewCell {
         priceLabel.text = "\(item.price.withCommas())원"
         nameLabel.text = item.name
         
-        imageView.sd_imageIndicator?.startAnimatingIndicator()
-        
-        // TODO: SDWebImageRetryFailed (RETRY 옵션 추가)
-        imageView.sd_setImage(with: URL(string: item.image)) { [weak self] image, error, type, url in
-            if error != nil {
-                // TODO: 로드 실패 로직
-            }
-            
-            self?.imageView.sd_imageIndicator?.stopAnimatingIndicator()
-        }
+        imageView.loadImage(urlString: item.image)
         
         newBadgeLabel.isHidden = !item.isNew
         

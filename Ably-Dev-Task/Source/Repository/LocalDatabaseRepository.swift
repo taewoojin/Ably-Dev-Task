@@ -1,5 +1,5 @@
 //
-//  BaseRepository.swift
+//  LocalDatabaseRepository.swift
 //  Ably-Dev-Task
 //
 //  Created by 진태우 on 2022/06/21.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-class BaseRepository<T> {
+class LocalDatabaseRepository<T> {
     
     // MARK: Properties
     
@@ -33,16 +33,8 @@ class BaseRepository<T> {
         manager.fetch(model, predicate: predicate, sorted: sorted, completion: completion)
     }
     
-    func fetchValue<T>(
-        _ model: T.Type,
-        predicate: NSPredicate?,
-        sorted: Sorted?
-    ) -> [T] where T: Storable  {
-        return manager.fetchValue(model, predicate: predicate, sorted: sorted)
-    }
-    
-    func save(object: Storable) throws {
-        try manager.save(object: object)
+    func add(object: Storable) throws {
+        try manager.add(object: object)
     }
     
     func delete<T>(
@@ -50,7 +42,7 @@ class BaseRepository<T> {
         object: Storable,
         predicate: NSPredicate
     ) throws where T: Storable {
-        if let item = manager.fetchValue(model, predicate: predicate, sorted: nil).first {
+        if let item = manager.fetchValue(model, predicate: predicate) {
             try manager.delete(object: item)
         }
     }

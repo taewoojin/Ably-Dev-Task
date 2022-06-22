@@ -94,17 +94,7 @@ class BannerCell: UICollectionViewCell {
     func configure(with items: [Banner]) {
         for item in items {
             let imageView = UIImageView()
-            
-            imageView.sd_imageIndicator?.startAnimatingIndicator()
-            
-            // TODO: SDWebImageRetryFailed (RETRY 옵션 추가)
-            imageView.sd_setImage(with: URL(string: item.image)) { image, error, type, url in
-                if error != nil {
-                    // TODO: 로드 실패 로직
-                }
-                
-                imageView.sd_imageIndicator?.stopAnimatingIndicator()
-            }
+            imageView.loadImage(urlString: item.image)
             
             stackView.addArrangedSubview(imageView)
             imageView.snp.makeConstraints {

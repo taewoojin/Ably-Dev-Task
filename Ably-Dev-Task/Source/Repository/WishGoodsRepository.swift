@@ -1,5 +1,5 @@
 //
-//  WishRepository.swift
+//  WishGoodsRepository.swift
 //  Ably-Dev-Task
 //
 //  Created by 진태우 on 2022/06/21.
@@ -8,31 +8,29 @@
 import Foundation
 
 
-protocol WishRepositoryProtocol {
-    func getItems(predicate: NSPredicate?, sort: Sorted?, completion: (([Goods]) -> Void))
-    func getItems(predicate: NSPredicate?, sort: Sorted?) -> [Goods]
-    func save(_ goods: Goods)
+protocol WishGoodsRepositoryProtocol {
+    func getItems(predicate: NSPredicate?, sort: Sorted?, completion: ([Goods]) -> Void)
+    func add(_ goods: Goods)
     func delete(_ goods: Goods)
 }
 
-class WishRepository: BaseRepository<Goods> {}
+class WishGoodsRepository: LocalDatabaseRepository<Goods> {}
 
-extension WishRepository: WishRepositoryProtocol {
+extension WishGoodsRepository: WishGoodsRepositoryProtocol {
     
-    func getItems(predicate: NSPredicate? = nil, sort: Sorted? = nil, completion: (([Goods]) -> Void)) {
+    func getItems(
+        predicate: NSPredicate? = nil,
+        sort: Sorted? = nil,
+        completion: ([Goods]) -> Void
+    ) {
         super.fetch(WishGoods.self, predicate: predicate, sorted: sort) { goods in
             completion(goods.map { Goods.mapFromPersistenceObject($0) })
         }
     }
     
-    func getItems(predicate: NSPredicate? = nil, sort: Sorted? = nil) -> [Goods] {
-        let items = super.fetchValue(WishGoods.self, predicate: predicate, sorted: sort)
-        return items.map { Goods.mapFromPersistenceObject($0) }
-    }
-    
-    func save(_ goods: Goods) {
+    func add(_ goods: Goods) {
         do {
-            try super.save(object: goods.mapToPersistenceObject())
+            try super.add(object: goods.mapToPersistenceObject())
         } catch {
             print("error in method(saveClothes):  \(error.localizedDescription)")
         }
