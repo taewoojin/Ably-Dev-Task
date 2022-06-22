@@ -13,6 +13,7 @@
 		F407E59A2862E8F400EB280A /* WishGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5992862E8F400EB280A /* WishGoodsCell.swift */; };
 		F407E59C2862EA8D00EB280A /* BaseGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E59B2862EA8D00EB280A /* BaseGoodsCell.swift */; };
 		F407E59F286302AC00EB280A /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E59E286302AB00EB280A /* CGFloat+Extensions.swift */; };
+		F407E5A228630E1200EB280A /* MappableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5A128630E1200EB280A /* MappableProtocol.swift */; };
 		F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A470D2285FFA640009C890 /* PaddingLabel.swift */; };
 		F4A470D82860C12F0009C890 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F4A470D72860C12F0009C890 /* Realm */; };
 		F4A470DA2860C12F0009C890 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4A470D92860C12F0009C890 /* RealmSwift */; };
@@ -84,6 +85,7 @@
 		F407E5992862E8F400EB280A /* WishGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoodsCell.swift; sourceTree = "<group>"; };
 		F407E59B2862EA8D00EB280A /* BaseGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGoodsCell.swift; sourceTree = "<group>"; };
 		F407E59E286302AB00EB280A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		F407E5A128630E1200EB280A /* MappableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableProtocol.swift; sourceTree = "<group>"; };
 		F4A470D2285FFA640009C890 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F4A470DB2860C5190009C890 /* WishGoodsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoodsRepository.swift; sourceTree = "<group>"; };
 		F4A470DD2860C5400009C890 /* LocalDatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseRepository.swift; sourceTree = "<group>"; };
@@ -227,6 +229,14 @@
 			path = Goods;
 			sourceTree = "<group>";
 		};
+		F407E5A028630E0100EB280A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F407E5A128630E1200EB280A /* MappableProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		F4A470D1285FFA350009C890 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +296,7 @@
 				F4A470DF2860C56C0009C890 /* Manager */,
 				F4C25C2E285DC05700570A5C /* Model */,
 				F4C25BE3285DAEAE00570A5C /* Present */,
+				F407E5A028630E0100EB280A /* Protocol */,
 				F4C25C3C285DF16500570A5C /* Repository */,
 				F4C25C3A285DF15700570A5C /* Router */,
 				F407E5942862D73900EB280A /* Rx */,
@@ -590,6 +601,7 @@
 				F4C25C4A285E190800570A5C /* BannerCell.swift in Sources */,
 				F4C25C51285F6CEA00570A5C /* Int+Extensions.swift in Sources */,
 				F4C25BE2285DAE6600570A5C /* HomeCoordinator.swift in Sources */,
+				F407E5A228630E1200EB280A /* MappableProtocol.swift in Sources */,
 				F4C25C30285DC05F00570A5C /* Goods.swift in Sources */,
 				F4C25C44285DF59E00570A5C /* HomeData.swift in Sources */,
 				F4C25C39285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift in Sources */,

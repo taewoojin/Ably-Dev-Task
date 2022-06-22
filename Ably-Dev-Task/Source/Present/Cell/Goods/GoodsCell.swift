@@ -27,12 +27,12 @@ class GoodsCell: BaseGoodsCell {
         wishButton.rx.tap
             .map { [weak self] in self?.goods }
             .filterNil()
-            .map { $0.isBookmark ? .unbookmark($0) : .bookmark($0) }
+            .map { $0.isWish ? .removeWishlist($0) : .addWishlist($0) }
             .bind(to: viewModel.action)
             .disposed(by: disposeBag)
         
         viewModel.currentStore
-            .map { $0.bookmarkedGoodsList }
+            .map { $0.wishlist }
             .distinctUntilChanged()
             .map { [unowned self] in $0.filter({ $0.id == self.goods!.id }).first }
             .subscribe(on: MainScheduler.instance)
@@ -68,14 +68,13 @@ class GoodsCell: BaseGoodsCell {
         buyingCountLabel.isHidden = item.sellCount < 10
         buyingCountLabel.text = "\(item.sellCount.withCommas())개 구매중"
         
-        if item.isBookmark {
+        if item.isWish {
             wishButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             wishButton.tintColor = UIColor(named: "main")
         } else {
             wishButton.setImage(UIImage(systemName: "heart"), for: .normal)
             wishButton.tintColor = .white
-        }
-        
+        }   
     }
 
 }

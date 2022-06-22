@@ -98,7 +98,7 @@ class HomeViewController: BaseViewController {
         viewDidLoad
             .flatMap {
                 Observable.concat(
-                    .just(.fetchBookmarkedGoodsList),
+                    .just(.fetchWishlist),
                     .just(.fetchHomeData)
                 )
             }

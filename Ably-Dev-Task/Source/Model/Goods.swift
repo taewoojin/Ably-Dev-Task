@@ -7,16 +7,6 @@
 
 import Foundation
 
-import RealmSwift
-
-
-protocol MappableProtocol {
-    associatedtype PersistenceType: Storable
-    
-    func mapToPersistenceObject() -> PersistenceType
-    static func mapFromPersistenceObject(_ object: PersistenceType) -> Self
-}
-
 
 struct Goods: Codable, Hashable {
     var id: Int
@@ -26,7 +16,7 @@ struct Goods: Codable, Hashable {
     let price: Int
     let isNew: Bool
     let sellCount: Int
-    var isBookmark: Bool = false
+    var isWish: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case id, name, image, price
@@ -48,7 +38,7 @@ extension Goods: MappableProtocol {
         model.price = price
         model.isNew = isNew
         model.sellCount = sellCount
-        model.isBookmark = isBookmark
+        model.isWish = isWish
         return model
     }
     
@@ -61,7 +51,7 @@ extension Goods: MappableProtocol {
             price: object.price,
             isNew: object.isNew,
             sellCount: object.sellCount,
-            isBookmark: object.isBookmark
+            isWish: object.isWish
         )
     }
     

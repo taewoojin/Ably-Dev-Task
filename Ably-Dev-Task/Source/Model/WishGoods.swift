@@ -18,5 +18,5 @@ class WishGoods: Object, Codable {
     @Persisted var price: Int
     @Persisted var isNew: Bool
     @Persisted var sellCount: Int
-    @Persisted var isBookmark: Bool
+    @Persisted var isWish: Bool
 }

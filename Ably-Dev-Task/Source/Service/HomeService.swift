@@ -19,11 +19,11 @@ protocol HomeServiceProtocol {
     
     func fetchGoods(with lastId: Int) -> Single<[Goods]>
     
-    func bookmark(with goods: Goods) -> Single<Bool>
+    func addWishlist(with goods: Goods) -> Single<Bool>
     
-    func unbookmark(with goods: Goods) -> Single<Bool>
+    func removeWishlist(with goods: Goods) -> Single<Bool>
     
-    func fetchBookmarkedGoodsList() -> Single<[Goods]>
+    func fetchWishlist() -> Single<[Goods]>
 }
 
 
@@ -56,7 +56,7 @@ struct HomeService: HomeServiceProtocol {
             .catchAndReturn([])
     }
     
-    func bookmark(with goods: Goods) -> Single<Bool> {
+    func addWishlist(with goods: Goods) -> Single<Bool> {
         return Single.create { single in
             wishGoodsRepository.add(goods)
             single(.success(true))
@@ -72,7 +72,7 @@ struct HomeService: HomeServiceProtocol {
         }
     }
     
-    func unbookmark(with goods: Goods) -> Single<Bool> {
+    func removeWishlist(with goods: Goods) -> Single<Bool> {
         return Single.create { single in
             wishGoodsRepository.delete(goods)
             single(.success(true))
@@ -81,7 +81,7 @@ struct HomeService: HomeServiceProtocol {
         }
     }
     
-    func fetchBookmarkedGoodsList() -> Single<[Goods]> {
+    func fetchWishlist() -> Single<[Goods]> {
         return Single.create { single in
             wishGoodsRepository.fetch(
                 WishGoods.self,

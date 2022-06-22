@@ -15,28 +15,25 @@ class HomeViewModel {
         case fetchHomeData
         case fetchGoods
         case refresh
-        case bookmark(Goods)
-        case unbookmark(Goods)
-        case fetchBookmarkedGoodsList
+        case fetchWishlist
+        case addWishlist(Goods)
+        case removeWishlist(Goods)
     }
     
     enum Mutation {
         case setHomeData(HomeData?)
         case setGoods([Goods])
         case setIsRefresh(Bool)
-        case setBookmarkedGoods(Goods?)
-        case setBookmarkedGoodsList([Goods])
-        case setUnbookmarkedGoods(Goods?)
+        case setWishlist([Goods])
+        case setAddedWishlist(Goods?)
+        case setRemovedWishlist(Goods?)
     }
     
     struct Store {
         var homeData: HomeData?
-        var goods: [Goods] = []
-        var isRefresh: Bool = false
-        var bookmarkedGoods: Goods?
-        var bookmarkedGoodsList: [Goods] = []
-        var unbookmarkedGoods: Goods?
         var isLoadableGoods: Bool = true        // 상품 로드 가능 여부(로드할 상품이 없을 경우, false)
+        var isRefresh: Bool = false
+        var wishlist: [Goods] = []
     }
     
     
@@ -100,20 +97,20 @@ class HomeViewModel {
         case .refresh:
             return .just(.setIsRefresh(true))
             
-        case .bookmark(let goods):
-            return service.bookmark(with: goods)
+        case .addWishlist(let goods):
+            return service.addWishlist(with: goods)
                 .asObservable()
-                .map { $0 ? .setBookmarkedGoods(goods) : .setBookmarkedGoods(nil) }
+                .map { $0 ? .setAddedWishlist(goods) : .setAddedWishlist(nil) }
             
-        case .unbookmark(let goods):
-            return service.unbookmark(with: goods)
+        case .removeWishlist(let goods):
+            return service.removeWishlist(with: goods)
                 .asObservable()
-                .map { $0 ? .setUnbookmarkedGoods(goods) : .setUnbookmarkedGoods(nil) }
+                .map { $0 ? .setRemovedWishlist(goods) : .setRemovedWishlist(nil) }
             
-        case .fetchBookmarkedGoodsList:
-            return service.fetchBookmarkedGoodsList()
+        case .fetchWishlist:
+            return service.fetchWishlist()
                 .asObservable()
-                .map { .setBookmarkedGoodsList($0) }
+                .map { .setWishlist($0) }
             
         }
     }
@@ -130,26 +127,26 @@ class HomeViewModel {
         case .setIsRefresh(let isRefresh):
             store.isRefresh = isRefresh
             
-        case .setBookmarkedGoods(let goods):
+        case .setWishlist(let wishlist):
+            store.wishlist = wishlist
+            
+        case .setAddedWishlist(let goods):
             guard let goods = goods,
                   let index = store.homeData?.goods.firstIndex(where: { $0 == goods }) else {
                 break
             }
             
-            store.bookmarkedGoodsList.append(goods)
-            store.homeData?.goods[index].isBookmark = true
+            store.wishlist.append(goods)
+            store.homeData?.goods[index].isWish = true
             
-        case .setBookmarkedGoodsList(let goodsList):
-            store.bookmarkedGoodsList = goodsList
-            
-        case .setUnbookmarkedGoods(let goods):
+        case .setRemovedWishlist(let goods):
             guard let goods = goods,
                   let index = store.homeData?.goods.firstIndex(of: goods) else {
                 break
             }
         
-            store.bookmarkedGoodsList = store.bookmarkedGoodsList.filter { $0.id != goods.id }
-            store.homeData?.goods[index].isBookmark = false
+            store.wishlist = store.wishlist.filter { $0.id != goods.id }
+            store.homeData?.goods[index].isWish = false
             
         }
         
@@ -159,7 +156,7 @@ class HomeViewModel {
     private func checkBookmarking(with goodsList: [Goods]) -> [Goods] {
         var list = goodsList
         list.indices.forEach {
-            list[$0].isBookmark = store.bookmarkedGoodsList.contains(list[$0])
+            list[$0].isWish = store.wishlist.contains(list[$0])
         }
         return list
     }
