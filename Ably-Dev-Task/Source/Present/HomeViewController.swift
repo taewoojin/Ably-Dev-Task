@@ -51,8 +51,6 @@ class HomeViewController: BaseViewController {
     
     let sections: [Section] = [.banner, .goods]
     
-    let colors: [UIColor] = [.red, .green, .blue, .black]
-    
 
     // MARK: Initializing
     
@@ -83,7 +81,6 @@ class HomeViewController: BaseViewController {
         
         navigationItem.title = "홈"
         
-        collectionView.delegate = self
         collectionView.refreshControl = refreshControl
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
         collectionView.register(GoodsCell.self, forCellWithReuseIdentifier: GoodsCell.typeName)
@@ -100,7 +97,12 @@ class HomeViewController: BaseViewController {
     
     override func setupLifeCycleBinding() {
         rx.viewDidLoad
-            .map { .fetchHomeData }
+            .flatMap {
+                Observable.concat(
+                    .just(.fetchBookmarkedGoodsList),
+                    .just(.fetchHomeData)
+                )
+            }
             .bind(to: viewModel.action)
             .disposed(by: disposeBag)
     }
@@ -150,7 +152,7 @@ class HomeViewController: BaseViewController {
     // MARK: Setup DataSource
     
     private func configureDataSource() {
-        datasource = Datasource(collectionView: collectionView) { collectionView, indexPath, item in
+        datasource = Datasource(collectionView: collectionView) { [weak self] collectionView, indexPath, item in
             switch item {
             case .banner(let items):
                 guard let cell = collectionView.dequeueReusableCell(
@@ -169,7 +171,7 @@ class HomeViewController: BaseViewController {
                 ) as? GoodsCell else {
                     fatalError("Failed to load a cell")
                 }
-                cell.configure(with: item)
+                cell.configure(with: item, viewModel: self?.viewModel)
                 return cell
                 
             }
@@ -252,15 +254,4 @@ extension HomeViewController {
         
         return section
     }
-}
-
-
-// MARK: - UICollectionViewDelegate
-
-extension HomeViewController: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
 }

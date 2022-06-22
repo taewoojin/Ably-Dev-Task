@@ -15,13 +15,15 @@ class GoodsCell: UICollectionViewCell {
 
     // MARK: UI
     
-    lazy var containerStackView = UIStackView(arrangedSubviews: [imageView, contentStackView])
+    lazy var containerStackView = UIStackView(arrangedSubviews: [imageWrapperView, contentStackView])
     
     lazy var contentStackView = UIStackView(arrangedSubviews: [priceStcakView, nameLabel, optionStackView])
     
     lazy var priceStcakView = UIStackView(arrangedSubviews: [discountRateLabel, priceLabel])
     
     lazy var optionStackView = UIStackView(arrangedSubviews: [newBadgeLabel, buyingCountLabel])
+    
+    let imageWrapperView = UIView()
     
     let imageView = UIImageView()
     
@@ -35,12 +37,16 @@ class GoodsCell: UICollectionViewCell {
     
     let buyingCountLabel = UILabel()
     
-    let separatorView = UIView()
+    let bookmarkButton = UIButton()
     
     
     // MARK: Properties
     
     var disposeBag = DisposeBag()
+    
+    weak var viewModel: HomeViewModel?
+    
+    var goods: Goods?
     
     
     // MARK: Initializing
@@ -54,6 +60,14 @@ class GoodsCell: UICollectionViewCell {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK: Life Cycle Views
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
     }
     
     
@@ -100,10 +114,11 @@ class GoodsCell: UICollectionViewCell {
         buyingCountLabel.font = .preferredFont(forTextStyle: .caption1)
         buyingCountLabel.textColor = UIColor(named: "text_secondary")
         
-        separatorView.backgroundColor = .systemGray4
+        bookmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        bookmarkButton.tintColor = .white
     }
     
-    func setupLayout() {
+    private func setupLayout() {
         contentView.addSubview(containerStackView)
         containerStackView.snp.makeConstraints {
             $0.bottom.equalToSuperview()
@@ -111,12 +126,55 @@ class GoodsCell: UICollectionViewCell {
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
-        imageView.snp.makeConstraints {
+        imageWrapperView.snp.makeConstraints {
             $0.width.height.equalTo(100)
         }
+        
+        imageWrapperView.addSubview(imageView)
+        imageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        imageWrapperView.addSubview(bookmarkButton)
+        bookmarkButton.snp.makeConstraints {
+            $0.top.trailing.equalToSuperview().inset(10)
+        }
+        
     }
     
-    func configure(with item: Goods) {
+    private func setupBinding() {
+        guard let viewModel = self.viewModel else { return }
+        
+        bookmarkButton.rx.tap
+            .map { [weak self] in self?.goods }
+            .filterNil()
+            .map { $0.isBookmark ? .unbookmark($0) : .bookmark($0) }
+            .bind(to: viewModel.action)
+            .disposed(by: disposeBag)
+        
+        viewModel.currentStore
+            .map { $0.bookmarkedGoodsList }
+            .distinctUntilChanged()
+            .map { [unowned self] in $0.filter({ $0.id == self.goods!.id }).first }
+            .subscribe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] goods in
+                guard let _ = goods else {
+                    self?.bookmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                    self?.bookmarkButton.tintColor = .white
+                    return
+                }
+                
+                self?.bookmarkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                self?.bookmarkButton.tintColor = UIColor(named: "main")
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func configure(with item: Goods, viewModel: HomeViewModel?) {
+        self.goods = item
+        self.viewModel = viewModel
+        setupBinding()
+        
         let discountRate = CGFloat(item.actualPrice - item.price) / CGFloat(item.actualPrice) * 100
         let roundedDiscountRate = Int(round(discountRate))
         discountRateLabel.isHidden = roundedDiscountRate <= 0
@@ -140,6 +198,15 @@ class GoodsCell: UICollectionViewCell {
         
         buyingCountLabel.isHidden = item.sellCount < 10
         buyingCountLabel.text = "\(item.sellCount.withCommas())개 구매중"
+        
+        if item.isBookmark {
+            bookmarkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            bookmarkButton.tintColor = UIColor(named: "main")
+        } else {
+            bookmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            bookmarkButton.tintColor = .white
+        }
+        
     }
 
 }

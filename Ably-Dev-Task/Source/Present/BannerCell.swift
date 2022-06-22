@@ -54,8 +54,6 @@ class BannerCell: UICollectionViewCell {
     
     private func setupAttributes() {
         scrollView.isPagingEnabled = true
-//        scrollView.bounces = true
-//        scrollView.isScrollEnabled = false
         scrollView.showsHorizontalScrollIndicator = false
         
         stackView.axis = .horizontal

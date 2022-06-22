@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 
 class WishListViewController: BaseViewController {
@@ -15,8 +16,7 @@ class WishListViewController: BaseViewController {
     }
     
     enum Item: Hashable {
-//        case goods(Goods)
-        case goods(UIColor)
+        case goods(Goods)
     }
     
     typealias Datasource = UICollectionViewDiffableDataSource<Section, Item>
@@ -40,35 +40,41 @@ class WishListViewController: BaseViewController {
     
     let sections: [Section] = [.goods]
     
-    let colors: [UIColor] = [.red, .green, .blue, .black]
+    let viewModel: HomeViewModel
+    
+    
+    // MARK: Initializing
+    
+    init(viewModel: HomeViewModel = HomeViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     // MARK: Life Cycle Views
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureDataSource()
-        datasource?.apply(snapshot(), animatingDifferences: false)
     }
+    
+    
+    // MARK: Setup
     
     override func setupAttributes() {
         super.setupAttributes()
         
         navigationItem.title = "좋아요"
         
-        collectionView.delegate = self
-//        collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
         collectionView.register(GoodsCell.self, forCellWithReuseIdentifier: GoodsCell.typeName)
-        
-//        collectionView.register(
-//            SeparatorView.self,
-//            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-//            withReuseIdentifier: SeparatorView.typeName
-//        )
-        
     }
     
     override func setupLayout() {
@@ -78,11 +84,30 @@ class WishListViewController: BaseViewController {
         }
     }
     
+    override func setupLifeCycleBinding() {
+        rx.viewWillAppear
+            .map { _ in .fetchBookmarkedGoodsList }
+            .bind(to: viewModel.action)
+            .disposed(by: disposeBag)
+    }
+    
+    override func setupBinding() {
+        viewModel.currentStore
+            .map { $0.bookmarkedGoodsList }
+            .distinctUntilChanged()
+            .subscribe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] list in
+                guard let `self` = self else { return }
+                self.datasource?.apply(self.snapshot(goodsList: list), animatingDifferences: true)
+            })
+            .disposed(by: disposeBag)
+    }
+    
     
     // MARK: Setup DataSource
     
     private func configureDataSource() {
-        datasource = Datasource(collectionView: collectionView) { collectionView, indexPath, item in
+        datasource = Datasource(collectionView: collectionView) { [weak self] collectionView, indexPath, item in
             switch item {
             case .goods(let item):
                 guard let cell = collectionView.dequeueReusableCell(
@@ -91,21 +116,16 @@ class WishListViewController: BaseViewController {
                 ) as? GoodsCell else {
                     fatalError("Failed to load a cell")
                 }
-//                cell.configure(with: item)
+                cell.configure(with: item, viewModel: self?.viewModel)
                 return cell
             }
         }
     }
 
-    private func snapshot() -> Snapshot {
+    private func snapshot(goodsList: [Goods]) -> Snapshot {
         var snapshot = Snapshot()
-        
-//        guard let data = viewModel.store.homeData else {
-//            return snapshot
-//        }
-
         snapshot.appendSections(sections)
-        snapshot.appendItems(colors.map { Item.goods($0) }, toSection: sections[0])
+        snapshot.appendItems(goodsList.map { Item.goods($0) }, toSection: sections[0])
         return snapshot
     }
 
@@ -117,7 +137,7 @@ class WishListViewController: BaseViewController {
 extension WishListViewController {
     
     func createLayout() -> UICollectionViewCompositionalLayout {
-        let layout = UICollectionViewCompositionalLayout { [unowned self] index, env in
+        let layout = SeparatorCollectionFlowLayout { [unowned self] index, env in
             return self.sectionFor(index: index, environment: env)
         }
         return layout
@@ -127,11 +147,11 @@ extension WishListViewController {
         let section = datasource!.snapshot().sectionIdentifiers[index]
         
         switch section {
-        case .goods: return createTutorialSection()
+        case .goods: return createGoodsSection()
         }
     }
     
-    private func createTutorialSection() -> NSCollectionLayoutSection {
+    private func createGoodsSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
@@ -149,20 +169,9 @@ extension WishListViewController {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 15
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+        section.interGroupSpacing = 20
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0)
         
         return section
     }
-}
-
-
-// MARK: - UICollectionViewDelegate
-
-extension WishListViewController: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
 }
