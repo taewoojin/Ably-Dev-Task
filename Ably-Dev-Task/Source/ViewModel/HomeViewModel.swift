@@ -36,6 +36,7 @@ class HomeViewModel {
         var bookmarkedGoods: Goods?
         var bookmarkedGoodsList: [Goods] = []
         var unbookmarkedGoods: Goods?
+        var isLoadableGoods: Bool = true        // 상품 로드 가능 여부(로드할 상품이 없을 경우, false)
     }
     
     
@@ -123,6 +124,7 @@ class HomeViewModel {
             store.homeData = data
             
         case .setGoods(let goods):
+            store.isLoadableGoods = !goods.isEmpty
             store.homeData?.goods.append(contentsOf: goods)
             
         case .setIsRefresh(let isRefresh):

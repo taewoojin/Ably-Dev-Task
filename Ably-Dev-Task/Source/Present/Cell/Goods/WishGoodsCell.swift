@@ -19,10 +19,9 @@ class WishGoodsCell: BaseGoodsCell {
     }
     
     func configure(with item: Goods) {
-        let discountRate = CGFloat(item.actualPrice - item.price) / CGFloat(item.actualPrice) * 100
-        let roundedDiscountRate = Int(round(discountRate))
-        discountRateLabel.isHidden = roundedDiscountRate <= 0
-        discountRateLabel.text = "\(roundedDiscountRate)%"
+        let discountRate = CGFloat.discountRate(actualPrice: item.actualPrice, price: item.price)
+        discountRateLabel.isHidden = discountRate <= 0
+        discountRateLabel.text = "\(discountRate)%"
         
         priceLabel.text = "\(item.price.withCommas())원"
         nameLabel.text = item.name

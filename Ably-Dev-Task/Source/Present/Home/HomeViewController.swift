@@ -114,13 +114,14 @@ class HomeViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         collectionView.rx.willDisplayCell
-            .filter { [unowned self] cell, indexPath in
+            .filter { [unowned self] (_, indexPath) in
                 guard let goodsCount = self.viewModel.store.homeData?.goods.count else {
                     return false
                 }
                 return goodsCount - 2 == indexPath.item
             }
-            .map { (_, _) in .fetchGoods }
+            .filter { [unowned self] _ in self.viewModel.store.isLoadableGoods }
+            .map { _ in .fetchGoods }
             .bind(to: viewModel.action)
             .disposed(by: disposeBag)
         

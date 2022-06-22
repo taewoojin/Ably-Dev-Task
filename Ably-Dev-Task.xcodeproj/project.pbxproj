@@ -12,6 +12,7 @@
 		F407E5982862E68100EB280A /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5972862E68100EB280A /* WishlistViewModel.swift */; };
 		F407E59A2862E8F400EB280A /* WishGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5992862E8F400EB280A /* WishGoodsCell.swift */; };
 		F407E59C2862EA8D00EB280A /* BaseGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E59B2862EA8D00EB280A /* BaseGoodsCell.swift */; };
+		F407E59F286302AC00EB280A /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E59E286302AB00EB280A /* CGFloat+Extensions.swift */; };
 		F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A470D2285FFA640009C890 /* PaddingLabel.swift */; };
 		F4A470D82860C12F0009C890 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F4A470D72860C12F0009C890 /* Realm */; };
 		F4A470DA2860C12F0009C890 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4A470D92860C12F0009C890 /* RealmSwift */; };
@@ -82,6 +83,7 @@
 		F407E5972862E68100EB280A /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
 		F407E5992862E8F400EB280A /* WishGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoodsCell.swift; sourceTree = "<group>"; };
 		F407E59B2862EA8D00EB280A /* BaseGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGoodsCell.swift; sourceTree = "<group>"; };
+		F407E59E286302AB00EB280A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		F4A470D2285FFA640009C890 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F4A470DB2860C5190009C890 /* WishGoodsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoodsRepository.swift; sourceTree = "<group>"; };
 		F4A470DD2860C5400009C890 /* LocalDatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseRepository.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 		F4C25C35285DC61E00570A5C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F407E59E286302AB00EB280A /* CGFloat+Extensions.swift */,
 				F4C25C50285F6CEA00570A5C /* Int+Extensions.swift */,
 				F4C25C36285DC62900570A5C /* NSObject+Extensions.swift */,
 				F4C25C52285FEB3000570A5C /* UIImageView+Extensions.swift */,
@@ -574,6 +577,7 @@
 				F4C25C3E285DF1B700570A5C /* HomeRouter.swift in Sources */,
 				F4C25BDE285DAB4200570A5C /* Coordinator.swift in Sources */,
 				F4C25C46285DF7D400570A5C /* HomeService.swift in Sources */,
+				F407E59F286302AC00EB280A /* CGFloat+Extensions.swift in Sources */,
 				F4A470E12860C5780009C890 /* RealmDataManager.swift in Sources */,
 				F4C25C32285DC1A200570A5C /* Banner.swift in Sources */,
 				F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */,
