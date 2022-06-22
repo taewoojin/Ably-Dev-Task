@@ -9,20 +9,20 @@
 import Foundation
 
 import Moya
-import RxMoya
 import RxCocoa
+import RxMoya
 import RxSwift
 
 
 protocol HomeRepositoryProtocol {
+    func fetchHomeData() -> Single<Result<HomeData, Error>>
     
-    func fetchHomeData() -> Single<HomeData>
-    
-    func fetchGoods(with lastId: Int) -> Single<[Goods]>
+    func fetchGoods(with lastId: Int) -> Single<Result<[Goods], Error>>
 }
 
 
 class HomeRepository: HomeRepositoryProtocol {
+    
     let provider: MoyaProvider<HomeRouter>
     
     
@@ -30,36 +30,16 @@ class HomeRepository: HomeRepositoryProtocol {
         self.provider = provider
     }
     
-    func fetchHomeData() -> Single<HomeData> {
+    func fetchHomeData() -> Single<Result<HomeData, Error>> {
         return provider.rx
             .request(.fetchHomeData)
-            .map(HomeData.self)
+            .asResult(HomeData.self)
     }
     
-    func fetchGoods(with lastId: Int) -> Single<[Goods]> {
+    func fetchGoods(with lastId: Int) -> Single<Result<[Goods], Error>> {
         return provider.rx
             .request(.fetchGoods(lastId: lastId))
-//            .do(onSuccess: { response in
-//                print("fetchGood=====", String(data: response.data, encoding: .utf8))
-//            })
-            .flatMap { response in
-                
-                guard let jsonObject = try? JSONSerialization.jsonObject(with: response.data, options: []) as? [String:Any] else {
-                    throw MoyaError.jsonMapping(response)
-                }
-                
-                let object = jsonObject["goods"]
-                guard let goodsData = try? JSONSerialization.data(withJSONObject: object) else {
-                    throw MoyaError.jsonMapping(response)
-                }
-                
-                guard let goods = try? JSONDecoder().decode([Goods].self, from: goodsData) else {
-                    throw MoyaError.jsonMapping(response)
-                }
-                
-                return .just(goods)
-            }
-//            .map([Goods].self)
+            .asResult([Goods].self, key: "goods")
     }
     
 }

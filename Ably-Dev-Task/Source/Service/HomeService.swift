@@ -14,10 +14,9 @@ import RxSwift
 
 
 protocol HomeServiceProtocol {
+    func fetchHomeData() -> Single<Result<HomeData, Error>>
     
-    func fetchHomeData() -> Single<HomeData?>
-    
-    func fetchGoods(with lastId: Int) -> Single<[Goods]>
+    func fetchGoods(with lastId: Int) -> Single<Result<[Goods], Error>>
     
     func addWishlist(with goods: Goods) -> Single<Bool>
     
@@ -42,32 +41,18 @@ struct HomeService: HomeServiceProtocol {
         self.wishGoodsRepository = wishGoodsRepository
     }
     
-    func fetchHomeData() -> Single<HomeData?> {
-        return repository
-            .fetchHomeData()
-            .map { $0 }
-            .catchAndReturn(nil)
+    func fetchHomeData() -> Single<Result<HomeData, Error>> {
+        return repository.fetchHomeData()
     }
     
-    func fetchGoods(with lastId: Int) -> Single<[Goods]> {
-        return repository
-            .fetchGoods(with: lastId)
-            .map { $0 }
-            .catchAndReturn([])
+    func fetchGoods(with lastId: Int) -> Single<Result<[Goods], Error>> {
+        return repository.fetchGoods(with: lastId)
     }
     
     func addWishlist(with goods: Goods) -> Single<Bool> {
         return Single.create { single in
             wishGoodsRepository.add(goods)
             single(.success(true))
-            
-//            do {
-//                try wishGoodsRepository.save(goods)
-//                single(.success(true))
-//            } catch {
-//                single(.failure(error))
-//            }
-            
             return Disposables.create()
         }
     }
@@ -76,7 +61,6 @@ struct HomeService: HomeServiceProtocol {
         return Single.create { single in
             wishGoodsRepository.delete(goods)
             single(.success(true))
-            
             return Disposables.create()
         }
     }

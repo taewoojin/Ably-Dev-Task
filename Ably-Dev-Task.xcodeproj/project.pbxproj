@@ -14,6 +14,8 @@
 		F407E59C2862EA8D00EB280A /* BaseGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E59B2862EA8D00EB280A /* BaseGoodsCell.swift */; };
 		F407E59F286302AC00EB280A /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E59E286302AB00EB280A /* CGFloat+Extensions.swift */; };
 		F407E5A228630E1200EB280A /* MappableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5A128630E1200EB280A /* MappableProtocol.swift */; };
+		F407E5A52863373E00EB280A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5A42863373E00EB280A /* NetworkError.swift */; };
+		F407E5A82863376400EB280A /* Moya+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5A72863376400EB280A /* Moya+Rx.swift */; };
 		F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A470D2285FFA640009C890 /* PaddingLabel.swift */; };
 		F4A470D82860C12F0009C890 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F4A470D72860C12F0009C890 /* Realm */; };
 		F4A470DA2860C12F0009C890 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4A470D92860C12F0009C890 /* RealmSwift */; };
@@ -86,6 +88,8 @@
 		F407E59B2862EA8D00EB280A /* BaseGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGoodsCell.swift; sourceTree = "<group>"; };
 		F407E59E286302AB00EB280A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		F407E5A128630E1200EB280A /* MappableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableProtocol.swift; sourceTree = "<group>"; };
+		F407E5A42863373E00EB280A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F407E5A72863376400EB280A /* Moya+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Rx.swift"; sourceTree = "<group>"; };
 		F4A470D2285FFA640009C890 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F4A470DB2860C5190009C890 /* WishGoodsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoodsRepository.swift; sourceTree = "<group>"; };
 		F4A470DD2860C5400009C890 /* LocalDatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseRepository.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F4C25C4B285F66A100570A5C /* UIViewController+Rx.swift */,
+				F407E5A72863376400EB280A /* Moya+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -235,6 +240,22 @@
 				F407E5A128630E1200EB280A /* MappableProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F407E5A32863372D00EB280A /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				F407E5A62863374200EB280A /* Error */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		F407E5A62863374200EB280A /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				F407E5A42863373E00EB280A /* NetworkError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		F4A470D1285FFA350009C890 /* Component */ = {
@@ -292,6 +313,7 @@
 				F4C25C3F285DF2C200570A5C /* Constant.swift */,
 				F4A470D1285FFA350009C890 /* Component */,
 				F4C25BDC285DAB3800570A5C /* Coordinator */,
+				F407E5A32863372D00EB280A /* Enum */,
 				F4C25C35285DC61E00570A5C /* Extensions */,
 				F4A470DF2860C56C0009C890 /* Manager */,
 				F4C25C2E285DC05700570A5C /* Model */,
@@ -594,6 +616,7 @@
 				F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */,
 				F4C25C42285DF4DD00570A5C /* HomeRepository.swift in Sources */,
 				F4C25BE0285DAC3100570A5C /* TabBarCoordinator.swift in Sources */,
+				F407E5A82863376400EB280A /* Moya+Rx.swift in Sources */,
 				F407E59C2862EA8D00EB280A /* BaseGoodsCell.swift in Sources */,
 				F4A470DC2860C5190009C890 /* WishGoodsRepository.swift in Sources */,
 				F4FA8E7C285DA58F0044ADB2 /* TabBarController.swift in Sources */,
@@ -607,6 +630,7 @@
 				F4C25C39285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift in Sources */,
 				F407E5982862E68100EB280A /* WishlistViewModel.swift in Sources */,
 				F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */,
+				F407E5A52863373E00EB280A /* NetworkError.swift in Sources */,
 				F4C25C4C285F66A100570A5C /* UIViewController+Rx.swift in Sources */,
 				F4C25C37285DC62900570A5C /* NSObject+Extensions.swift in Sources */,
 			);

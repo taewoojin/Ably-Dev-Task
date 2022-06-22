@@ -70,15 +70,19 @@ class HomeViewModel {
             return service
                     .fetchHomeData()
                     .asObservable()
-                    .flatMap { data -> Observable<Mutation> in
-                        var data = data
-                        let goods = self.checkBookmarking(with: data?.goods ?? [])
-                        data?.goods = goods
-                    
-                        return Observable.merge([
-                            .just(.setHomeData(data)),
-                            .just(.setIsRefresh(false))
-                        ])
+                    .flatMap { result -> Observable<Mutation> in
+                        switch result {
+                        case .success(let data):
+                            return Observable.merge([
+                                .just(.setHomeData(data)),
+                                .just(.setIsRefresh(false))
+                            ])
+                            
+                        case .failure(let error):
+                            // TODO: 상황에 따른 에러 처리
+                            return .just(.setIsRefresh(false))
+                            
+                        }
                     }
             
         case .fetchGoods:
@@ -89,9 +93,17 @@ class HomeViewModel {
             return service
                 .fetchGoods(with: lastId)
                 .asObservable()
-                .flatMap { goods -> Observable<Mutation> in
-                    let goods = self.checkBookmarking(with: goods)
-                    return .just(.setGoods(goods))
+                .flatMap { result -> Observable<Mutation> in
+                    switch result {
+                    case .success(let goods):
+                        let goods = self.checkBookmarking(with: goods)
+                        return .just(.setGoods(goods))
+                        
+                    case .failure(let error):
+                        // TODO: 상황에 따른 에러 처리
+                        return .empty()
+                        
+                    }
                 }
             
         case .refresh:

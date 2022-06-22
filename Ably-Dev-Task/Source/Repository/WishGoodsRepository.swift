@@ -10,7 +10,9 @@ import Foundation
 
 protocol WishGoodsRepositoryProtocol {
     func getItems(predicate: NSPredicate?, sort: Sorted?, completion: ([Goods]) -> Void)
+    
     func add(_ goods: Goods)
+    
     func delete(_ goods: Goods)
 }
 
