@@ -57,14 +57,6 @@ class WishListViewController: BaseViewController {
     }
     
     
-    // MARK: Life Cycle Views
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureDataSource()
-    }
-    
-    
     // MARK: Setup
     
     override func setupAttributes() {
@@ -88,6 +80,12 @@ class WishListViewController: BaseViewController {
         rx.viewWillAppear
             .map { _ in .fetchWishlist }
             .bind(to: viewModel.action)
+            .disposed(by: disposeBag)
+        
+        rx.viewDidLoad
+            .subscribe(onNext: { [weak self] in
+                self?.configureDataSource()
+            })
             .disposed(by: disposeBag)
     }
     
@@ -116,6 +114,7 @@ class WishListViewController: BaseViewController {
                 ) as? WishGoodsCell else {
                     fatalError("Failed to load a cell")
                 }
+                
                 cell.configure(with: item)
                 return cell
             }
@@ -132,23 +131,22 @@ class WishListViewController: BaseViewController {
 }
 
 
-// MARK: Setup UICollectionViewLayout
+// MARK: - Setup UICollectionViewCompositionalLayout
 
 extension WishListViewController {
     
     func createLayout() -> UICollectionViewCompositionalLayout {
         let layout = SeparatorCollectionFlowLayout { [unowned self] index, env in
-            return self.sectionFor(index: index, environment: env)
+            guard let datasource = self.datasource else {
+                fatalError("datasource value is nil")
+            }
+            
+            let section = datasource.snapshot().sectionIdentifiers[index]
+            switch section {
+            case .goods: return createGoodsSection()
+            }
         }
         return layout
-    }
-    
-    func sectionFor(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        let section = datasource!.snapshot().sectionIdentifiers[index]
-        
-        switch section {
-        case .goods: return createGoodsSection()
-        }
     }
     
     private func createGoodsSection() -> NSCollectionLayoutSection {

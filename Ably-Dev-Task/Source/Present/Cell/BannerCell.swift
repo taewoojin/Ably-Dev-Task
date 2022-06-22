@@ -26,6 +26,8 @@ class BannerCell: UICollectionViewCell {
     
     var disposeBag = DisposeBag()
 
+    var banners: [Banner] = []
+    
     
     // MARK: Initializing
     
@@ -33,6 +35,7 @@ class BannerCell: UICollectionViewCell {
         super.init(frame: frame)
         setupAttributes()
         setupLayout()
+        setupBinding()
     }
     
     @available(*, unavailable)
@@ -60,7 +63,6 @@ class BannerCell: UICollectionViewCell {
         stackView.distribution = .fillEqually
         stackView.spacing = 0
         
-        pagingLabel.text = "1/3"
         pagingLabel.textColor = .white
         pagingLabel.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         pagingLabel.layer.cornerRadius = 11
@@ -88,10 +90,17 @@ class BannerCell: UICollectionViewCell {
     }
     
     private func setupBinding() {
-        
+        scrollView.rx.didScroll
+            .map { [unowned self] in Int(round(self.scrollView.contentOffset.x / UIScreen.main.bounds.width)) + 1 }
+            .filter { $0 > 0 && $0 <= self.banners.count }
+            .map { "\($0)/\(self.banners.count)" }
+            .bind(to: pagingLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     func configure(with items: [Banner]) {
+        self.banners = items
+        
         for item in items {
             let imageView = UIImageView()
             imageView.loadImage(urlString: item.image)
@@ -102,6 +111,8 @@ class BannerCell: UICollectionViewCell {
                 $0.height.equalTo(scrollView.snp.height)
             }
         }
+        
+        pagingLabel.text = "1/\(items.count)"
     }
     
 }

@@ -66,14 +66,6 @@ class HomeViewController: BaseViewController {
     }
     
     
-    // MARK: Life Cycle Views
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureDataSource()
-    }
-    
-    
     // MARK: Setup
     
     override func setupAttributes() {
@@ -83,9 +75,8 @@ class HomeViewController: BaseViewController {
         
         collectionView.refreshControl = refreshControl
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
-        collectionView.register(GoodsCell.self, forCellWithReuseIdentifier: GoodsCell.typeName)
         collectionView.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.typeName)
-        
+        collectionView.register(GoodsCell.self, forCellWithReuseIdentifier: GoodsCell.typeName)
     }
     
     override func setupLayout() {
@@ -96,7 +87,15 @@ class HomeViewController: BaseViewController {
     }
     
     override func setupLifeCycleBinding() {
-        rx.viewDidLoad
+        let viewDidLoad = rx.viewDidLoad.share()
+        
+        viewDidLoad
+            .subscribe(onNext: { [weak self] in
+                self?.configureDataSource()
+            })
+            .disposed(by: disposeBag)
+        
+        viewDidLoad
             .flatMap {
                 Observable.concat(
                     .just(.fetchBookmarkedGoodsList),
@@ -161,6 +160,7 @@ class HomeViewController: BaseViewController {
                 ) as? BannerCell else {
                     fatalError("Failed to load a cell")
                 }
+                
                 cell.configure(with: items)
                 return cell
                 
@@ -171,6 +171,7 @@ class HomeViewController: BaseViewController {
                 ) as? GoodsCell else {
                     fatalError("Failed to load a cell")
                 }
+                
                 cell.configure(with: item, viewModel: self?.viewModel)
                 return cell
                 
@@ -189,24 +190,23 @@ class HomeViewController: BaseViewController {
 }
 
 
-// MARK: Setup UICollectionViewLayout
+// MARK: - Setup UICollectionViewCompositionalLayout
 
 extension HomeViewController {
     
     func createLayout() -> UICollectionViewCompositionalLayout {
         let layout = SeparatorCollectionFlowLayout { [unowned self] index, env in
-            return self.sectionFor(index: index, environment: env)
+            guard let datasource = self.datasource else {
+                fatalError("datasource value is nil")
+            }
+            
+            let section = datasource.snapshot().sectionIdentifiers[index]
+            switch section {
+            case .banner: return createBannerSection()
+            case .goods: return createGoodsSection()
+            }
         }
         return layout
-    }
-    
-    func sectionFor(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        let section = datasource!.snapshot().sectionIdentifiers[index]
-        
-        switch section {
-        case .banner: return createBannerSection()
-        case .goods: return createGoodsSection()
-        }
     }
     
     private func createBannerSection() -> NSCollectionLayoutSection {
