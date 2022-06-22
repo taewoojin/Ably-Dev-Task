@@ -68,22 +68,22 @@ class HomeViewModel {
             
         case .fetchHomeData:
             return service
-                    .fetchHomeData()
-                    .asObservable()
-                    .flatMap { result -> Observable<Mutation> in
-                        switch result {
-                        case .success(let data):
-                            return Observable.merge([
-                                .just(.setHomeData(data)),
-                                .just(.setIsRefresh(false))
-                            ])
-                            
-                        case .failure(_):
-                            // TODO: 상황에 따른 에러 처리
-                            return .just(.setIsRefresh(false))
-                            
-                        }
+                .fetchHomeData()
+                .asObservable()
+                .flatMap { result -> Observable<Mutation> in
+                    switch result {
+                    case .success(let data):
+                        return Observable.merge([
+                            .just(.setHomeData(data)),
+                            .just(.setIsRefresh(false))
+                        ])
+                        
+                    case .failure(_):
+                        // TODO: 상황에 따른 에러 처리
+                        return .just(.setIsRefresh(false))
+                        
                     }
+                }
             
         case .fetchGoods:
             guard let lastId = store.homeData?.goods.last?.id else {
@@ -156,7 +156,7 @@ class HomeViewModel {
                   let index = store.homeData?.goods.firstIndex(of: goods) else {
                 break
             }
-        
+            
             store.wishlist = store.wishlist.filter { $0.id != goods.id }
             store.homeData?.goods[index].isWish = false
             

@@ -64,7 +64,7 @@ class WishlistViewModel {
         switch mutation {
         case .setWishlist(let list):
             store.wishlist = list
-                
+            
         }
         
         return .just(store)
