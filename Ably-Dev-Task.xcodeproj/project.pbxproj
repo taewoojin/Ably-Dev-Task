@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		F407E58C2862020000EB280A /* WishGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E58B286201FF00EB280A /* WishGoods.swift */; };
+		F407E5962862E5B200EB280A /* WishlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5952862E5B200EB280A /* WishlistService.swift */; };
+		F407E5982862E68100EB280A /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5972862E68100EB280A /* WishlistViewModel.swift */; };
+		F407E59A2862E8F400EB280A /* WishGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5992862E8F400EB280A /* WishGoodsCell.swift */; };
+		F407E59C2862EA8D00EB280A /* BaseGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E59B2862EA8D00EB280A /* BaseGoodsCell.swift */; };
 		F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A470D2285FFA640009C890 /* PaddingLabel.swift */; };
 		F4A470D82860C12F0009C890 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F4A470D72860C12F0009C890 /* Realm */; };
 		F4A470DA2860C12F0009C890 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4A470D92860C12F0009C890 /* RealmSwift */; };
@@ -74,6 +78,10 @@
 
 /* Begin PBXFileReference section */
 		F407E58B286201FF00EB280A /* WishGoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoods.swift; sourceTree = "<group>"; };
+		F407E5952862E5B200EB280A /* WishlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistService.swift; sourceTree = "<group>"; };
+		F407E5972862E68100EB280A /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
+		F407E5992862E8F400EB280A /* WishGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoodsCell.swift; sourceTree = "<group>"; };
+		F407E59B2862EA8D00EB280A /* BaseGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGoodsCell.swift; sourceTree = "<group>"; };
 		F4A470D2285FFA640009C890 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F4A470DB2860C5190009C890 /* WishGoodsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoodsRepository.swift; sourceTree = "<group>"; };
 		F4A470DD2860C5400009C890 /* LocalDatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseRepository.swift; sourceTree = "<group>"; };
@@ -194,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				F4C25C49285E190800570A5C /* BannerCell.swift */,
-				F4C25C33285DC58800570A5C /* GoodsCell.swift */,
+				F407E59D2862F0F800EB280A /* Goods */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -205,6 +213,16 @@
 				F4C25C4B285F66A100570A5C /* UIViewController+Rx.swift */,
 			);
 			path = Rx;
+			sourceTree = "<group>";
+		};
+		F407E59D2862F0F800EB280A /* Goods */ = {
+			isa = PBXGroup;
+			children = (
+				F407E59B2862EA8D00EB280A /* BaseGoodsCell.swift */,
+				F4C25C33285DC58800570A5C /* GoodsCell.swift */,
+				F407E5992862E8F400EB280A /* WishGoodsCell.swift */,
+			);
+			path = Goods;
 			sourceTree = "<group>";
 		};
 		F4A470D1285FFA350009C890 /* Component */ = {
@@ -319,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				F4C25C45285DF7D400570A5C /* HomeService.swift */,
+				F407E5952862E5B200EB280A /* WishlistService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -383,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				F4C25C47285DF89E00570A5C /* HomeViewModel.swift */,
+				F407E5972862E68100EB280A /* WishlistViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -543,7 +563,9 @@
 				F4C25BDB285DAB0800570A5C /* BaseViewController.swift in Sources */,
 				F4C25BEA285DB08300570A5C /* WishListViewController.swift in Sources */,
 				F4C25C34285DC58800570A5C /* GoodsCell.swift in Sources */,
+				F407E5962862E5B200EB280A /* WishlistService.swift in Sources */,
 				F4A470DE2860C5400009C890 /* LocalDatabaseRepository.swift in Sources */,
+				F407E59A2862E8F400EB280A /* WishGoodsCell.swift in Sources */,
 				F4C25C48285DF89E00570A5C /* HomeViewModel.swift in Sources */,
 				F4C25C40285DF2C200570A5C /* Constant.swift in Sources */,
 				F4C25BEC285DB0B800570A5C /* WishListCoordinator.swift in Sources */,
@@ -557,6 +579,7 @@
 				F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */,
 				F4C25C42285DF4DD00570A5C /* HomeRepository.swift in Sources */,
 				F4C25BE0285DAC3100570A5C /* TabBarCoordinator.swift in Sources */,
+				F407E59C2862EA8D00EB280A /* BaseGoodsCell.swift in Sources */,
 				F4A470DC2860C5190009C890 /* WishGoodsRepository.swift in Sources */,
 				F4FA8E7C285DA58F0044ADB2 /* TabBarController.swift in Sources */,
 				F4C25BE5285DAEBA00570A5C /* HomeViewController.swift in Sources */,
@@ -566,6 +589,7 @@
 				F4C25C30285DC05F00570A5C /* Goods.swift in Sources */,
 				F4C25C44285DF59E00570A5C /* HomeData.swift in Sources */,
 				F4C25C39285DD4BF00570A5C /* SeparatorCollectionFlowLayout.swift in Sources */,
+				F407E5982862E68100EB280A /* WishlistViewModel.swift in Sources */,
 				F4FA8E00285D9CBE0044ADB2 /* AppDelegate.swift in Sources */,
 				F4C25C4C285F66A100570A5C /* UIViewController+Rx.swift in Sources */,
 				F4C25C37285DC62900570A5C /* NSObject+Extensions.swift in Sources */,

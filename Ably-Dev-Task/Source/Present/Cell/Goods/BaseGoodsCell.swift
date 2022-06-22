@@ -1,17 +1,16 @@
 //
-//  GoodsCell.swift
+//  BaseGoodsCell.swift
 //  Ably-Dev-Task
 //
-//  Created by 진태우 on 2022/06/18.
+//  Created by 진태우 on 2022/06/22.
 //
 
 import UIKit
 
 import RxSwift
-import SDWebImage
 
 
-class GoodsCell: UICollectionViewCell {
+class BaseGoodsCell: UICollectionViewCell {
 
     // MARK: UI
     
@@ -37,16 +36,12 @@ class GoodsCell: UICollectionViewCell {
     
     let buyingCountLabel = UILabel()
     
-    let bookmarkButton = UIButton()
+    let wishButton = UIButton()
     
     
     // MARK: Properties
     
     var disposeBag = DisposeBag()
-    
-    weak var viewModel: HomeViewModel?
-    
-    var goods: Goods?
     
     
     // MARK: Initializing
@@ -54,7 +49,7 @@ class GoodsCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAttributes()
-        setupLayout()   
+        setupLayout()
     }
     
     @available(*, unavailable)
@@ -73,7 +68,7 @@ class GoodsCell: UICollectionViewCell {
     
     // MARK: Setup
     
-    private func setupAttributes() {
+    func setupAttributes() {
         containerStackView.axis = .horizontal
         containerStackView.spacing = 10
         containerStackView.alignment = .top
@@ -114,8 +109,8 @@ class GoodsCell: UICollectionViewCell {
         buyingCountLabel.font = .preferredFont(forTextStyle: .caption1)
         buyingCountLabel.textColor = UIColor(named: "text_secondary")
         
-        bookmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        bookmarkButton.tintColor = .white
+        wishButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        wishButton.tintColor = .white
     }
     
     private func setupLayout() {
@@ -135,67 +130,9 @@ class GoodsCell: UICollectionViewCell {
             $0.edges.equalToSuperview()
         }
         
-        imageWrapperView.addSubview(bookmarkButton)
-        bookmarkButton.snp.makeConstraints {
+        imageWrapperView.addSubview(wishButton)
+        wishButton.snp.makeConstraints {
             $0.top.trailing.equalToSuperview().inset(10)
-        }
-        
-    }
-    
-    private func setupBinding() {
-        guard let viewModel = self.viewModel else { return }
-        
-        bookmarkButton.rx.tap
-            .map { [weak self] in self?.goods }
-            .filterNil()
-            .map { $0.isBookmark ? .unbookmark($0) : .bookmark($0) }
-            .bind(to: viewModel.action)
-            .disposed(by: disposeBag)
-        
-        viewModel.currentStore
-            .map { $0.bookmarkedGoodsList }
-            .distinctUntilChanged()
-            .map { [unowned self] in $0.filter({ $0.id == self.goods!.id }).first }
-            .subscribe(on: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] goods in
-                guard let _ = goods else {
-                    self?.bookmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
-                    self?.bookmarkButton.tintColor = .white
-                    return
-                }
-                
-                self?.bookmarkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                self?.bookmarkButton.tintColor = UIColor(named: "main")
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    func configure(with item: Goods, viewModel: HomeViewModel?) {
-        self.goods = item
-        self.viewModel = viewModel
-        setupBinding()
-        
-        let discountRate = CGFloat(item.actualPrice - item.price) / CGFloat(item.actualPrice) * 100
-        let roundedDiscountRate = Int(round(discountRate))
-        discountRateLabel.isHidden = roundedDiscountRate <= 0
-        discountRateLabel.text = "\(roundedDiscountRate)%"
-        
-        priceLabel.text = "\(item.price.withCommas())원"
-        nameLabel.text = item.name
-        
-        imageView.loadImage(urlString: item.image)
-        
-        newBadgeLabel.isHidden = !item.isNew
-        
-        buyingCountLabel.isHidden = item.sellCount < 10
-        buyingCountLabel.text = "\(item.sellCount.withCommas())개 구매중"
-        
-        if item.isBookmark {
-            bookmarkButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            bookmarkButton.tintColor = UIColor(named: "main")
-        } else {
-            bookmarkButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            bookmarkButton.tintColor = .white
         }
         
     }

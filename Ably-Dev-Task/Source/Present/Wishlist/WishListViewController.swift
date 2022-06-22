@@ -40,12 +40,12 @@ class WishListViewController: BaseViewController {
     
     let sections: [Section] = [.goods]
     
-    let viewModel: HomeViewModel
+    let viewModel: WishlistViewModel
     
     
     // MARK: Initializing
     
-    init(viewModel: HomeViewModel = HomeViewModel()) {
+    init(viewModel: WishlistViewModel = WishlistViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         
@@ -74,7 +74,7 @@ class WishListViewController: BaseViewController {
         
         collectionView.showsVerticalScrollIndicator = false
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
-        collectionView.register(GoodsCell.self, forCellWithReuseIdentifier: GoodsCell.typeName)
+        collectionView.register(WishGoodsCell.self, forCellWithReuseIdentifier: WishGoodsCell.typeName)
     }
     
     override func setupLayout() {
@@ -86,19 +86,19 @@ class WishListViewController: BaseViewController {
     
     override func setupLifeCycleBinding() {
         rx.viewWillAppear
-            .map { _ in .fetchBookmarkedGoodsList }
+            .map { _ in .fetchWishlist }
             .bind(to: viewModel.action)
             .disposed(by: disposeBag)
     }
     
     override func setupBinding() {
         viewModel.currentStore
-            .map { $0.bookmarkedGoodsList }
+            .map { $0.wishlist }
             .distinctUntilChanged()
             .subscribe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] list in
                 guard let `self` = self else { return }
-                self.datasource?.apply(self.snapshot(goodsList: list), animatingDifferences: true)
+                self.datasource?.apply(self.snapshot(goodsList: list), animatingDifferences: false)
             })
             .disposed(by: disposeBag)
     }
@@ -107,16 +107,16 @@ class WishListViewController: BaseViewController {
     // MARK: Setup DataSource
     
     private func configureDataSource() {
-        datasource = Datasource(collectionView: collectionView) { [weak self] collectionView, indexPath, item in
+        datasource = Datasource(collectionView: collectionView) { collectionView, indexPath, item in
             switch item {
             case .goods(let item):
                 guard let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: GoodsCell.typeName,
+                    withReuseIdentifier: WishGoodsCell.typeName,
                     for: indexPath
-                ) as? GoodsCell else {
+                ) as? WishGoodsCell else {
                     fatalError("Failed to load a cell")
                 }
-                cell.configure(with: item, viewModel: self?.viewModel)
+                cell.configure(with: item)
                 return cell
             }
         }
