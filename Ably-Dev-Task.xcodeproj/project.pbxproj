@@ -16,8 +16,6 @@
 		F407E5A228630E1200EB280A /* MappableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5A128630E1200EB280A /* MappableProtocol.swift */; };
 		F407E5A52863373E00EB280A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5A42863373E00EB280A /* NetworkError.swift */; };
 		F407E5A82863376400EB280A /* Moya+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5A72863376400EB280A /* Moya+Rx.swift */; };
-		F407E5AE28633EF700EB280A /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = F407E5AD28633EF700EB280A /* Quick */; };
-		F407E5B1286342F500EB280A /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = F407E5B0286342F500EB280A /* Nimble */; };
 		F407E5B32863436800EB280A /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407E5B22863436600EB280A /* HomeViewTests.swift */; };
 		F4A470D3285FFA640009C890 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A470D2285FFA640009C890 /* PaddingLabel.swift */; };
 		F4A470D82860C12F0009C890 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F4A470D72860C12F0009C890 /* Realm */; };
@@ -137,7 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F407E5B1286342F500EB280A /* Nimble in Frameworks */,
 				F4FA8E77285DA3860044ADB2 /* RxMoya in Frameworks */,
 				F4FA8E70285DA3600044ADB2 /* RxSwift in Frameworks */,
 				F4FA8E6E285DA3600044ADB2 /* RxCocoa in Frameworks */,
@@ -148,7 +145,6 @@
 				F4FA8E73285DA3860044ADB2 /* Moya in Frameworks */,
 				F4A470DA2860C12F0009C890 /* RealmSwift in Frameworks */,
 				F4FA8E75285DA3860044ADB2 /* ReactiveMoya in Frameworks */,
-				F407E5AE28633EF700EB280A /* Quick in Frameworks */,
 				F4FA8E4B285DA2690044ADB2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,8 +471,6 @@
 				F4C25C4E285F69DD00570A5C /* RxOptional */,
 				F4A470D72860C12F0009C890 /* Realm */,
 				F4A470D92860C12F0009C890 /* RealmSwift */,
-				F407E5AD28633EF700EB280A /* Quick */,
-				F407E5B0286342F500EB280A /* Nimble */,
 			);
 			productName = "Ably-Dev-Task";
 			productReference = F4FA8DFC285D9CBE0044ADB2 /* Ably-Dev-Task.app */;
@@ -558,8 +552,6 @@
 				F4C25BE6285DAFA100570A5C /* XCRemoteSwiftPackageReference "Then" */,
 				F4C25C4D285F69DD00570A5C /* XCRemoteSwiftPackageReference "RxOptional" */,
 				F4A470D62860C12F0009C890 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				F407E5AC28633EF600EB280A /* XCRemoteSwiftPackageReference "Quick" */,
-				F407E5AF286342F500EB280A /* XCRemoteSwiftPackageReference "Nimble" */,
 			);
 			productRefGroup = F4FA8DFD285D9CBE0044ADB2 /* Products */;
 			projectDirPath = "";
@@ -810,7 +802,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22VQ353X6R;
-				ENABLE_TESTING_SEARCH_PATHS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ably-Dev-Task/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -838,7 +830,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22VQ353X6R;
-				ENABLE_TESTING_SEARCH_PATHS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ably-Dev-Task/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -976,22 +968,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F407E5AC28633EF600EB280A /* XCRemoteSwiftPackageReference "Quick" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Quick/Quick.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		F407E5AF286342F500EB280A /* XCRemoteSwiftPackageReference "Nimble" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Quick/Nimble.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
 		F4A470D62860C12F0009C890 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -1051,16 +1027,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F407E5AD28633EF700EB280A /* Quick */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F407E5AC28633EF600EB280A /* XCRemoteSwiftPackageReference "Quick" */;
-			productName = Quick;
-		};
-		F407E5B0286342F500EB280A /* Nimble */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F407E5AF286342F500EB280A /* XCRemoteSwiftPackageReference "Nimble" */;
-			productName = Nimble;
-		};
 		F4A470D72860C12F0009C890 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4A470D62860C12F0009C890 /* XCRemoteSwiftPackageReference "realm-swift" */;
